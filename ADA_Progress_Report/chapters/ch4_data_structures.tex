@@ -1,0 +1,36 @@
+\chapter{Data Structure Selection}
+
+Efficient data structures are required to support scalable route computation on the
+state-expanded graph $G^{*}$.
+
+\section{Adjacency Lists}
+
+The road network $G = (V, E)$ is stored as adjacency lists, giving $O(V + E)$ space.
+For the state-expanded graph $G^{*}$, each node $(v, f)$ has travel edges to
+$(w,\; f - d(v,w)/\eta)$ for reachable neighbors $w$, and refuel edges to $(v,\; f + b)$
+for $b \in \{\varepsilon, \ldots, C - f\}$.
+Adjacency lists make both sets of neighbors enumerable in $O(\deg(v) + F)$ per state,
+which is the per-state cost in all six algorithms.
+
+\section{Priority Queue}
+
+State-Expanded Dijkstra, A*, RF-A*, and PF-A* all require repeated extraction of the
+minimum-cost state from $G^{*}$.
+A binary min-heap supports INSERT, EXTRACT-MIN, and DECREASE-KEY each in
+$O(\log|S|)$ time.
+Since $|S| = O(VF)$, each heap operation costs $O(\log(VF))$, which drives the
+$O((EF + VF^{2})\log(VF))$ worst-case complexity shared by all four search algorithms.
+
+For PF-A*, the heap key is the $f$-score $g(v,f) + h_{\mathrm{PF}}(v,f)$, which depends on
+both $v$ and $f$.
+The heap compares these composite keys correctly without modification.
+
+\section{Hash Tables}
+
+Hash tables map state keys $(v, f)$ to accumulated $g$-values and parent pointers,
+supporting $O(1)$ expected-time lookup and update during state relaxation.
+This is necessary because the state space $S = V \times F$ is sparse in practice: not all
+$(v, f)$ combinations are reachable, so a dense 2-D array of size $V \times F$ would waste
+memory.
+Station metadata (price $p(v)$, GPS coordinates for heuristic computation) is also stored in
+a hash table for $O(1)$ retrieval.

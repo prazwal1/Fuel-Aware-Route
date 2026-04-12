@@ -1,0 +1,57 @@
+\chapter{Problem Description and Motivation}
+
+Route planning is a fundamental problem in transportation networks and algorithm design.
+Classical navigation systems compute routes that minimize either travel distance or travel time.
+However, in many real-world scenarios the primary cost of transportation is fuel consumption,
+which depends not only on the length of the route but also on the price of fuel at the stations
+the driver chooses to stop at.
+On a long-distance Thai route such as Bangkok to Chiang Mai ($\approx$700\,km), a driver
+with a 50-liter tank consuming 10\,km/L could spend between 1,750\,THB and 2,450\,THB
+on fuel depending solely on which stations they choose---a difference of up to 40\% driven by
+price variation alone.
+
+Fuel prices vary by up to 3--5\,THB/L across Thai provinces (based on EPPO historical
+data), due to supply chain differences, regional demand, and transportation costs.
+This variation is large enough to make refueling strategy a first-class optimization concern,
+yet existing navigation systems treat all fuel stops as equivalent.
+
+This project studies the \textit{fuel-aware route optimization problem}.
+Concretely, we want to answer: given a road network and a set of fuel stations with known
+prices, what is the cheapest way to drive from a starting point to a destination without running
+out of fuel?
+The solution requires determining both:
+\begin{itemize}
+    \item the travel path between origin and destination, and
+    \item the sequence of refueling decisions along that path (where to stop, and how much
+          fuel to buy at each stop).
+\end{itemize}
+
+A critical subtlety that distinguishes this problem from standard shortest-path routing is the
+\textit{variable purchase decision}: the driver can choose to buy any amount of fuel at each
+station (subject to tank capacity), rather than always filling to capacity.
+This seemingly small freedom significantly changes the algorithm design.
+In the full-tank-only model, the fuel dimension disappears and standard Dijkstra on the road
+graph suffices.
+In the variable purchase model, the algorithm must track both the vehicle's position and its
+current fuel level as a joint state, expanding the search space from $O(V)$ to $O(V \times F)$
+where $F$ is the number of discretized fuel levels.
+We elaborate on this in Section~\ref{sec:variable_purchase}.
+
+Formally, given a road network $G = (V, E)$ and a set of fuel stations with associated prices
+$p\colon V \to \mathbb{R}^{+}$, the goal is to compute a route and refueling strategy that
+minimizes:
+\[
+    \min \sum_{i} b_i \cdot p(v_i)
+    \quad\text{subject to: fuel level} \geq 0 \text{ at all times,}
+\]
+where $b_i$ is the amount of fuel purchased at station $v_i$ and the fuel-level constraint must
+hold at every point along the route.
+
+This problem combines concepts from graph algorithms, constrained optimization,
+resource-bounded search, and transportation network analysis.
+The primary aim of this project is empirical: we implement and benchmark six algorithmic
+strategies on Thailand-scale road networks using real provincial price data, and propose
+Partial-Fill A* (PF-A*) as a fuel-level-aware heuristic extension of the existing RF-A*
+algorithm of Nandy et al.~\cite{nandy2023}.
+To our knowledge, this is the first empirical study applying Gas Station Problem algorithms
+to Thailand-scale road networks with real provincial price data.
