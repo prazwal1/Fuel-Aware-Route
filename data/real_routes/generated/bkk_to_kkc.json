@@ -1,0 +1,1632 @@
+{
+  "instance_id": "bkk_to_kkc",
+  "label": "Bangkok to Khon Kaen",
+  "collection_method": "distance",
+  "vehicle": {
+    "tank_capacity_l": 40.0,
+    "initial_fuel_l": 28.0,
+    "efficiency_km_per_l": 10.0
+  },
+  "source": "src_bkk_to_kkc",
+  "target": "dst_bkk_to_kkc",
+  "stations": [
+    {
+      "id": "src_bkk_to_kkc",
+      "name": "Victory Monument, Bangkok",
+      "lat": 13.765,
+      "lon": 100.5379,
+      "province": "Bangkok",
+      "price_thb_per_l": 43.58,
+      "price_source": "provincial_avg",
+      "osm_id": null
+    },
+    {
+      "id": "st_0000",
+      "name": "bkk_to_kkc_synthetic_0000",
+      "lat": 13.948373677235285,
+      "lon": 100.7036730175291,
+      "province": "Bangkok",
+      "price_thb_per_l": 43.58,
+      "price_source": "provincial_avg",
+      "osm_id": null
+    },
+    {
+      "id": "st_0001",
+      "name": "bkk_to_kkc_synthetic_0001",
+      "lat": 14.072285185787571,
+      "lon": 100.8404392515537,
+      "province": "Bangkok",
+      "price_thb_per_l": 43.58,
+      "price_source": "provincial_avg",
+      "osm_id": null
+    },
+    {
+      "id": "st_0002",
+      "name": "bkk_to_kkc_synthetic_0002",
+      "lat": 14.275186768014443,
+      "lon": 100.98244015332743,
+      "province": "Saraburi",
+      "price_thb_per_l": 43.88,
+      "price_source": "provincial_avg",
+      "osm_id": null
+    },
+    {
+      "id": "st_0003",
+      "name": "bkk_to_kkc_synthetic_0003",
+      "lat": 14.359758089557301,
+      "lon": 101.04015884402418,
+      "province": "Saraburi",
+      "price_thb_per_l": 43.88,
+      "price_source": "provincial_avg",
+      "osm_id": null
+    },
+    {
+      "id": "st_0004",
+      "name": "bkk_to_kkc_synthetic_0004",
+      "lat": 14.570058813111814,
+      "lon": 101.21045824946842,
+      "province": "Saraburi",
+      "price_thb_per_l": 43.88,
+      "price_source": "provincial_avg",
+      "osm_id": null
+    },
+    {
+      "id": "st_0005",
+      "name": "bkk_to_kkc_synthetic_0005",
+      "lat": 14.675173848186326,
+      "lon": 101.37989161539643,
+      "province": "Saraburi",
+      "price_thb_per_l": 43.88,
+      "price_source": "provincial_avg",
+      "osm_id": null
+    },
+    {
+      "id": "st_0006",
+      "name": "bkk_to_kkc_synthetic_0006",
+      "lat": 14.8795941325022,
+      "lon": 101.44622025455547,
+      "province": "Nakhon Ratchasima",
+      "price_thb_per_l": 43.98,
+      "price_source": "provincial_avg",
+      "osm_id": null
+    },
+    {
+      "id": "st_0007",
+      "name": "bkk_to_kkc_synthetic_0007",
+      "lat": 15.028701289296272,
+      "lon": 101.64397607414544,
+      "province": "Nakhon Ratchasima",
+      "price_thb_per_l": 43.98,
+      "price_source": "provincial_avg",
+      "osm_id": null
+    },
+    {
+      "id": "st_0008",
+      "name": "bkk_to_kkc_synthetic_0008",
+      "lat": 15.14238565062633,
+      "lon": 101.78234169246917,
+      "province": "Nakhon Ratchasima",
+      "price_thb_per_l": 43.98,
+      "price_source": "provincial_avg",
+      "osm_id": null
+    },
+    {
+      "id": "st_0009",
+      "name": "bkk_to_kkc_synthetic_0009",
+      "lat": 15.321151124381228,
+      "lon": 101.89086207880507,
+      "province": "Nakhon Ratchasima",
+      "price_thb_per_l": 43.98,
+      "price_source": "provincial_avg",
+      "osm_id": null
+    },
+    {
+      "id": "st_0010",
+      "name": "bkk_to_kkc_synthetic_0010",
+      "lat": 15.513483769003614,
+      "lon": 102.02451959092971,
+      "province": "Khon Kaen",
+      "price_thb_per_l": 44.28,
+      "price_source": "provincial_avg",
+      "osm_id": null
+    },
+    {
+      "id": "st_0011",
+      "name": "bkk_to_kkc_synthetic_0011",
+      "lat": 15.631363903715844,
+      "lon": 102.10826625281126,
+      "province": "Khon Kaen",
+      "price_thb_per_l": 44.28,
+      "price_source": "provincial_avg",
+      "osm_id": null
+    },
+    {
+      "id": "st_0012",
+      "name": "bkk_to_kkc_synthetic_0012",
+      "lat": 15.846456995860756,
+      "lon": 102.30701418934443,
+      "province": "Khon Kaen",
+      "price_thb_per_l": 44.28,
+      "price_source": "provincial_avg",
+      "osm_id": null
+    },
+    {
+      "id": "st_0013",
+      "name": "bkk_to_kkc_synthetic_0013",
+      "lat": 15.916588296945093,
+      "lon": 102.44879538087415,
+      "province": "Khon Kaen",
+      "price_thb_per_l": 44.28,
+      "price_source": "provincial_avg",
+      "osm_id": null
+    },
+    {
+      "id": "st_0014",
+      "name": "bkk_to_kkc_synthetic_0014",
+      "lat": 16.139299276558923,
+      "lon": 102.54252196738037,
+      "province": "Khon Kaen",
+      "price_thb_per_l": 44.28,
+      "price_source": "provincial_avg",
+      "osm_id": null
+    },
+    {
+      "id": "st_0015",
+      "name": "bkk_to_kkc_synthetic_0015",
+      "lat": 16.254487424923582,
+      "lon": 102.69190679265654,
+      "province": "Khon Kaen",
+      "price_thb_per_l": 44.28,
+      "price_source": "provincial_avg",
+      "osm_id": null
+    },
+    {
+      "id": "dst_bkk_to_kkc",
+      "name": "Khon Kaen (Mittraphap Road)",
+      "lat": 16.4322,
+      "lon": 102.8236,
+      "province": "Khon Kaen",
+      "price_thb_per_l": 9999.0,
+      "price_source": "destination_sentinel",
+      "osm_id": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "src_bkk_to_kkc",
+      "target": "st_0000",
+      "distance_km": 35.269
+    },
+    {
+      "source": "src_bkk_to_kkc",
+      "target": "st_0001",
+      "distance_km": 61.441
+    },
+    {
+      "source": "src_bkk_to_kkc",
+      "target": "st_0002",
+      "distance_km": 96.571
+    },
+    {
+      "source": "src_bkk_to_kkc",
+      "target": "st_0003",
+      "distance_km": 111.138
+    },
+    {
+      "source": "src_bkk_to_kkc",
+      "target": "st_0004",
+      "distance_km": 149.761
+    },
+    {
+      "source": "src_bkk_to_kkc",
+      "target": "st_0005",
+      "distance_km": 176.72
+    },
+    {
+      "source": "src_bkk_to_kkc",
+      "target": "st_0006",
+      "distance_km": 205.289
+    },
+    {
+      "source": "src_bkk_to_kkc",
+      "target": "st_0007",
+      "distance_km": 239.482
+    },
+    {
+      "source": "src_bkk_to_kkc",
+      "target": "st_0008",
+      "distance_km": 264.547
+    },
+    {
+      "source": "src_bkk_to_kkc",
+      "target": "st_0009",
+      "distance_km": 294.001
+    },
+    {
+      "source": "src_bkk_to_kkc",
+      "target": "st_0010",
+      "distance_km": 327.275
+    },
+    {
+      "source": "src_bkk_to_kkc",
+      "target": "st_0011",
+      "distance_km": 347.841
+    },
+    {
+      "source": "src_bkk_to_kkc",
+      "target": "st_0012",
+      "distance_km": 389.422
+    },
+    {
+      "source": "st_0000",
+      "target": "src_bkk_to_kkc",
+      "distance_km": 35.269
+    },
+    {
+      "source": "st_0000",
+      "target": "st_0001",
+      "distance_km": 26.245
+    },
+    {
+      "source": "st_0000",
+      "target": "st_0002",
+      "distance_km": 61.312
+    },
+    {
+      "source": "st_0000",
+      "target": "st_0003",
+      "distance_km": 75.899
+    },
+    {
+      "source": "st_0000",
+      "target": "st_0004",
+      "distance_km": 114.53
+    },
+    {
+      "source": "st_0000",
+      "target": "st_0005",
+      "distance_km": 141.453
+    },
+    {
+      "source": "st_0000",
+      "target": "st_0006",
+      "distance_km": 170.081
+    },
+    {
+      "source": "st_0000",
+      "target": "st_0007",
+      "distance_km": 204.22
+    },
+    {
+      "source": "st_0000",
+      "target": "st_0008",
+      "distance_km": 229.278
+    },
+    {
+      "source": "st_0000",
+      "target": "st_0009",
+      "distance_km": 258.742
+    },
+    {
+      "source": "st_0000",
+      "target": "st_0010",
+      "distance_km": 292.03
+    },
+    {
+      "source": "st_0000",
+      "target": "st_0011",
+      "distance_km": 312.604
+    },
+    {
+      "source": "st_0000",
+      "target": "st_0012",
+      "distance_km": 354.178
+    },
+    {
+      "source": "st_0000",
+      "target": "st_0013",
+      "distance_km": 374.635
+    },
+    {
+      "source": "st_0001",
+      "target": "src_bkk_to_kkc",
+      "distance_km": 61.441
+    },
+    {
+      "source": "st_0001",
+      "target": "st_0000",
+      "distance_km": 26.245
+    },
+    {
+      "source": "st_0001",
+      "target": "st_0002",
+      "distance_km": 35.445
+    },
+    {
+      "source": "st_0001",
+      "target": "st_0003",
+      "distance_km": 50.1
+    },
+    {
+      "source": "st_0001",
+      "target": "st_0004",
+      "distance_km": 88.676
+    },
+    {
+      "source": "st_0001",
+      "target": "st_0005",
+      "distance_km": 115.33
+    },
+    {
+      "source": "st_0001",
+      "target": "st_0006",
+      "distance_km": 144.248
+    },
+    {
+      "source": "st_0001",
+      "target": "st_0007",
+      "distance_km": 178.196
+    },
+    {
+      "source": "st_0001",
+      "target": "st_0008",
+      "distance_km": 203.191
+    },
+    {
+      "source": "st_0001",
+      "target": "st_0009",
+      "distance_km": 232.726
+    },
+    {
+      "source": "st_0001",
+      "target": "st_0010",
+      "distance_km": 266.058
+    },
+    {
+      "source": "st_0001",
+      "target": "st_0011",
+      "distance_km": 286.653
+    },
+    {
+      "source": "st_0001",
+      "target": "st_0012",
+      "distance_km": 328.204
+    },
+    {
+      "source": "st_0001",
+      "target": "st_0013",
+      "distance_km": 348.576
+    },
+    {
+      "source": "st_0001",
+      "target": "st_0014",
+      "distance_km": 381.701
+    },
+    {
+      "source": "st_0002",
+      "target": "src_bkk_to_kkc",
+      "distance_km": 96.571
+    },
+    {
+      "source": "st_0002",
+      "target": "st_0000",
+      "distance_km": 61.312
+    },
+    {
+      "source": "st_0002",
+      "target": "st_0001",
+      "distance_km": 35.445
+    },
+    {
+      "source": "st_0002",
+      "target": "st_0003",
+      "distance_km": 14.656
+    },
+    {
+      "source": "st_0002",
+      "target": "st_0004",
+      "distance_km": 53.253
+    },
+    {
+      "source": "st_0002",
+      "target": "st_0005",
+      "distance_km": 80.235
+    },
+    {
+      "source": "st_0002",
+      "target": "st_0006",
+      "distance_km": 108.826
+    },
+    {
+      "source": "st_0002",
+      "target": "st_0007",
+      "distance_km": 142.911
+    },
+    {
+      "source": "st_0002",
+      "target": "st_0008",
+      "distance_km": 167.994
+    },
+    {
+      "source": "st_0002",
+      "target": "st_0009",
+      "distance_km": 197.431
+    },
+    {
+      "source": "st_0002",
+      "target": "st_0010",
+      "distance_km": 230.721
+    },
+    {
+      "source": "st_0002",
+      "target": "st_0011",
+      "distance_km": 251.301
+    },
+    {
+      "source": "st_0002",
+      "target": "st_0012",
+      "distance_km": 292.87
+    },
+    {
+      "source": "st_0002",
+      "target": "st_0013",
+      "distance_km": 313.331
+    },
+    {
+      "source": "st_0002",
+      "target": "st_0014",
+      "distance_km": 346.358
+    },
+    {
+      "source": "st_0002",
+      "target": "st_0015",
+      "distance_km": 372.404
+    },
+    {
+      "source": "st_0003",
+      "target": "src_bkk_to_kkc",
+      "distance_km": 111.138
+    },
+    {
+      "source": "st_0003",
+      "target": "st_0000",
+      "distance_km": 75.899
+    },
+    {
+      "source": "st_0003",
+      "target": "st_0001",
+      "distance_km": 50.1
+    },
+    {
+      "source": "st_0003",
+      "target": "st_0002",
+      "distance_km": 14.656
+    },
+    {
+      "source": "st_0003",
+      "target": "st_0004",
+      "distance_km": 38.631
+    },
+    {
+      "source": "st_0003",
+      "target": "st_0005",
+      "distance_km": 65.871
+    },
+    {
+      "source": "st_0003",
+      "target": "st_0006",
+      "distance_km": 94.194
+    },
+    {
+      "source": "st_0003",
+      "target": "st_0007",
+      "distance_km": 128.369
+    },
+    {
+      "source": "st_0003",
+      "target": "st_0008",
+      "distance_km": 153.501
+    },
+    {
+      "source": "st_0003",
+      "target": "st_0009",
+      "distance_km": 182.875
+    },
+    {
+      "source": "st_0003",
+      "target": "st_0010",
+      "distance_km": 216.137
+    },
+    {
+      "source": "st_0003",
+      "target": "st_0011",
+      "distance_km": 236.706
+    },
+    {
+      "source": "st_0003",
+      "target": "st_0012",
+      "distance_km": 278.285
+    },
+    {
+      "source": "st_0003",
+      "target": "st_0013",
+      "distance_km": 298.793
+    },
+    {
+      "source": "st_0003",
+      "target": "st_0014",
+      "distance_km": 331.765
+    },
+    {
+      "source": "st_0003",
+      "target": "st_0015",
+      "distance_km": 357.835
+    },
+    {
+      "source": "st_0003",
+      "target": "dst_bkk_to_kkc",
+      "distance_km": 389.251
+    },
+    {
+      "source": "st_0004",
+      "target": "src_bkk_to_kkc",
+      "distance_km": 149.761
+    },
+    {
+      "source": "st_0004",
+      "target": "st_0000",
+      "distance_km": 114.53
+    },
+    {
+      "source": "st_0004",
+      "target": "st_0001",
+      "distance_km": 88.676
+    },
+    {
+      "source": "st_0004",
+      "target": "st_0002",
+      "distance_km": 53.253
+    },
+    {
+      "source": "st_0004",
+      "target": "st_0003",
+      "distance_km": 38.631
+    },
+    {
+      "source": "st_0004",
+      "target": "st_0005",
+      "distance_km": 28.152
+    },
+    {
+      "source": "st_0004",
+      "target": "st_0006",
+      "distance_km": 55.574
+    },
+    {
+      "source": "st_0004",
+      "target": "st_0007",
+      "distance_km": 89.813
+    },
+    {
+      "source": "st_0004",
+      "target": "st_0008",
+      "distance_km": 115.018
+    },
+    {
+      "source": "st_0004",
+      "target": "st_0009",
+      "distance_km": 144.285
+    },
+    {
+      "source": "st_0004",
+      "target": "st_0010",
+      "distance_km": 177.518
+    },
+    {
+      "source": "st_0004",
+      "target": "st_0011",
+      "distance_km": 198.08
+    },
+    {
+      "source": "st_0004",
+      "target": "st_0012",
+      "distance_km": 239.664
+    },
+    {
+      "source": "st_0004",
+      "target": "st_0013",
+      "distance_km": 260.218
+    },
+    {
+      "source": "st_0004",
+      "target": "st_0014",
+      "distance_km": 293.14
+    },
+    {
+      "source": "st_0004",
+      "target": "st_0015",
+      "distance_km": 319.224
+    },
+    {
+      "source": "st_0004",
+      "target": "dst_bkk_to_kkc",
+      "distance_km": 350.633
+    },
+    {
+      "source": "st_0005",
+      "target": "src_bkk_to_kkc",
+      "distance_km": 176.72
+    },
+    {
+      "source": "st_0005",
+      "target": "st_0000",
+      "distance_km": 141.453
+    },
+    {
+      "source": "st_0005",
+      "target": "st_0001",
+      "distance_km": 115.33
+    },
+    {
+      "source": "st_0005",
+      "target": "st_0002",
+      "distance_km": 80.235
+    },
+    {
+      "source": "st_0005",
+      "target": "st_0003",
+      "distance_km": 65.871
+    },
+    {
+      "source": "st_0005",
+      "target": "st_0004",
+      "distance_km": 28.152
+    },
+    {
+      "source": "st_0005",
+      "target": "st_0006",
+      "distance_km": 30.97
+    },
+    {
+      "source": "st_0005",
+      "target": "st_0007",
+      "distance_km": 63.033
+    },
+    {
+      "source": "st_0005",
+      "target": "st_0008",
+      "distance_km": 87.873
+    },
+    {
+      "source": "st_0005",
+      "target": "st_0009",
+      "distance_km": 117.515
+    },
+    {
+      "source": "st_0005",
+      "target": "st_0010",
+      "distance_km": 150.927
+    },
+    {
+      "source": "st_0005",
+      "target": "st_0011",
+      "distance_km": 171.56
+    },
+    {
+      "source": "st_0005",
+      "target": "st_0012",
+      "distance_km": 213.033
+    },
+    {
+      "source": "st_0005",
+      "target": "st_0013",
+      "distance_km": 233.269
+    },
+    {
+      "source": "st_0005",
+      "target": "st_0014",
+      "distance_km": 266.539
+    },
+    {
+      "source": "st_0005",
+      "target": "st_0015",
+      "distance_km": 292.452
+    },
+    {
+      "source": "st_0005",
+      "target": "dst_bkk_to_kkc",
+      "distance_km": 323.922
+    },
+    {
+      "source": "st_0006",
+      "target": "src_bkk_to_kkc",
+      "distance_km": 205.289
+    },
+    {
+      "source": "st_0006",
+      "target": "st_0000",
+      "distance_km": 170.081
+    },
+    {
+      "source": "st_0006",
+      "target": "st_0001",
+      "distance_km": 144.248
+    },
+    {
+      "source": "st_0006",
+      "target": "st_0002",
+      "distance_km": 108.826
+    },
+    {
+      "source": "st_0006",
+      "target": "st_0003",
+      "distance_km": 94.194
+    },
+    {
+      "source": "st_0006",
+      "target": "st_0004",
+      "distance_km": 55.574
+    },
+    {
+      "source": "st_0006",
+      "target": "st_0005",
+      "distance_km": 30.97
+    },
+    {
+      "source": "st_0006",
+      "target": "st_0007",
+      "distance_km": 35.033
+    },
+    {
+      "source": "st_0006",
+      "target": "st_0008",
+      "distance_km": 60.377
+    },
+    {
+      "source": "st_0006",
+      "target": "st_0009",
+      "distance_km": 89.022
+    },
+    {
+      "source": "st_0006",
+      "target": "st_0010",
+      "distance_km": 122.083
+    },
+    {
+      "source": "st_0006",
+      "target": "st_0011",
+      "distance_km": 142.597
+    },
+    {
+      "source": "st_0006",
+      "target": "st_0012",
+      "distance_km": 184.2
+    },
+    {
+      "source": "st_0006",
+      "target": "st_0013",
+      "distance_km": 204.92
+    },
+    {
+      "source": "st_0006",
+      "target": "st_0014",
+      "distance_km": 237.646
+    },
+    {
+      "source": "st_0006",
+      "target": "st_0015",
+      "distance_km": 263.794
+    },
+    {
+      "source": "st_0006",
+      "target": "dst_bkk_to_kkc",
+      "distance_km": 295.168
+    },
+    {
+      "source": "st_0007",
+      "target": "src_bkk_to_kkc",
+      "distance_km": 239.482
+    },
+    {
+      "source": "st_0007",
+      "target": "st_0000",
+      "distance_km": 204.22
+    },
+    {
+      "source": "st_0007",
+      "target": "st_0001",
+      "distance_km": 178.196
+    },
+    {
+      "source": "st_0007",
+      "target": "st_0002",
+      "distance_km": 142.911
+    },
+    {
+      "source": "st_0007",
+      "target": "st_0003",
+      "distance_km": 128.369
+    },
+    {
+      "source": "st_0007",
+      "target": "st_0004",
+      "distance_km": 89.813
+    },
+    {
+      "source": "st_0007",
+      "target": "st_0005",
+      "distance_km": 63.033
+    },
+    {
+      "source": "st_0007",
+      "target": "st_0006",
+      "distance_km": 35.033
+    },
+    {
+      "source": "st_0007",
+      "target": "st_0008",
+      "distance_km": 25.358
+    },
+    {
+      "source": "st_0007",
+      "target": "st_0009",
+      "distance_km": 54.53
+    },
+    {
+      "source": "st_0007",
+      "target": "st_0010",
+      "distance_km": 87.902
+    },
+    {
+      "source": "st_0007",
+      "target": "st_0011",
+      "distance_km": 108.531
+    },
+    {
+      "source": "st_0007",
+      "target": "st_0012",
+      "distance_km": 150.029
+    },
+    {
+      "source": "st_0007",
+      "target": "st_0013",
+      "distance_km": 170.424
+    },
+    {
+      "source": "st_0007",
+      "target": "st_0014",
+      "distance_km": 203.534
+    },
+    {
+      "source": "st_0007",
+      "target": "st_0015",
+      "distance_km": 229.51
+    },
+    {
+      "source": "st_0007",
+      "target": "dst_bkk_to_kkc",
+      "distance_km": 260.957
+    },
+    {
+      "source": "st_0008",
+      "target": "src_bkk_to_kkc",
+      "distance_km": 264.547
+    },
+    {
+      "source": "st_0008",
+      "target": "st_0000",
+      "distance_km": 229.278
+    },
+    {
+      "source": "st_0008",
+      "target": "st_0001",
+      "distance_km": 203.191
+    },
+    {
+      "source": "st_0008",
+      "target": "st_0002",
+      "distance_km": 167.994
+    },
+    {
+      "source": "st_0008",
+      "target": "st_0003",
+      "distance_km": 153.501
+    },
+    {
+      "source": "st_0008",
+      "target": "st_0004",
+      "distance_km": 115.018
+    },
+    {
+      "source": "st_0008",
+      "target": "st_0005",
+      "distance_km": 87.873
+    },
+    {
+      "source": "st_0008",
+      "target": "st_0006",
+      "distance_km": 60.377
+    },
+    {
+      "source": "st_0008",
+      "target": "st_0007",
+      "distance_km": 25.358
+    },
+    {
+      "source": "st_0008",
+      "target": "st_0009",
+      "distance_km": 29.948
+    },
+    {
+      "source": "st_0008",
+      "target": "st_0010",
+      "distance_km": 63.384
+    },
+    {
+      "source": "st_0008",
+      "target": "st_0011",
+      "distance_km": 84.021
+    },
+    {
+      "source": "st_0008",
+      "target": "st_0012",
+      "distance_km": 125.3
+    },
+    {
+      "source": "st_0008",
+      "target": "st_0013",
+      "distance_km": 145.397
+    },
+    {
+      "source": "st_0008",
+      "target": "st_0014",
+      "distance_km": 178.785
+    },
+    {
+      "source": "st_0008",
+      "target": "st_0015",
+      "distance_km": 204.607
+    },
+    {
+      "source": "st_0008",
+      "target": "dst_bkk_to_kkc",
+      "distance_km": 236.093
+    },
+    {
+      "source": "st_0009",
+      "target": "src_bkk_to_kkc",
+      "distance_km": 294.001
+    },
+    {
+      "source": "st_0009",
+      "target": "st_0000",
+      "distance_km": 258.742
+    },
+    {
+      "source": "st_0009",
+      "target": "st_0001",
+      "distance_km": 232.726
+    },
+    {
+      "source": "st_0009",
+      "target": "st_0002",
+      "distance_km": 197.431
+    },
+    {
+      "source": "st_0009",
+      "target": "st_0003",
+      "distance_km": 182.875
+    },
+    {
+      "source": "st_0009",
+      "target": "st_0004",
+      "distance_km": 144.285
+    },
+    {
+      "source": "st_0009",
+      "target": "st_0005",
+      "distance_km": 117.515
+    },
+    {
+      "source": "st_0009",
+      "target": "st_0006",
+      "distance_km": 89.022
+    },
+    {
+      "source": "st_0009",
+      "target": "st_0007",
+      "distance_km": 54.53
+    },
+    {
+      "source": "st_0009",
+      "target": "st_0008",
+      "distance_km": 29.948
+    },
+    {
+      "source": "st_0009",
+      "target": "st_0010",
+      "distance_km": 33.465
+    },
+    {
+      "source": "st_0009",
+      "target": "st_0011",
+      "distance_km": 54.112
+    },
+    {
+      "source": "st_0009",
+      "target": "st_0012",
+      "distance_km": 95.518
+    },
+    {
+      "source": "st_0009",
+      "target": "st_0013",
+      "distance_km": 115.938
+    },
+    {
+      "source": "st_0009",
+      "target": "st_0014",
+      "distance_km": 149.024
+    },
+    {
+      "source": "st_0009",
+      "target": "st_0015",
+      "distance_km": 174.98
+    },
+    {
+      "source": "st_0009",
+      "target": "dst_bkk_to_kkc",
+      "distance_km": 206.428
+    },
+    {
+      "source": "st_0010",
+      "target": "src_bkk_to_kkc",
+      "distance_km": 327.275
+    },
+    {
+      "source": "st_0010",
+      "target": "st_0000",
+      "distance_km": 292.03
+    },
+    {
+      "source": "st_0010",
+      "target": "st_0001",
+      "distance_km": 266.058
+    },
+    {
+      "source": "st_0010",
+      "target": "st_0002",
+      "distance_km": 230.721
+    },
+    {
+      "source": "st_0010",
+      "target": "st_0003",
+      "distance_km": 216.137
+    },
+    {
+      "source": "st_0010",
+      "target": "st_0004",
+      "distance_km": 177.518
+    },
+    {
+      "source": "st_0010",
+      "target": "st_0005",
+      "distance_km": 150.927
+    },
+    {
+      "source": "st_0010",
+      "target": "st_0006",
+      "distance_km": 122.083
+    },
+    {
+      "source": "st_0010",
+      "target": "st_0007",
+      "distance_km": 87.902
+    },
+    {
+      "source": "st_0010",
+      "target": "st_0008",
+      "distance_km": 63.384
+    },
+    {
+      "source": "st_0010",
+      "target": "st_0009",
+      "distance_km": 33.465
+    },
+    {
+      "source": "st_0010",
+      "target": "st_0011",
+      "distance_km": 20.648
+    },
+    {
+      "source": "st_0010",
+      "target": "st_0012",
+      "distance_km": 62.149
+    },
+    {
+      "source": "st_0010",
+      "target": "st_0013",
+      "distance_km": 82.951
+    },
+    {
+      "source": "st_0010",
+      "target": "st_0014",
+      "distance_km": 115.644
+    },
+    {
+      "source": "st_0010",
+      "target": "st_0015",
+      "distance_km": 141.716
+    },
+    {
+      "source": "st_0010",
+      "target": "dst_bkk_to_kkc",
+      "distance_km": 173.115
+    },
+    {
+      "source": "st_0011",
+      "target": "src_bkk_to_kkc",
+      "distance_km": 347.841
+    },
+    {
+      "source": "st_0011",
+      "target": "st_0000",
+      "distance_km": 312.604
+    },
+    {
+      "source": "st_0011",
+      "target": "st_0001",
+      "distance_km": 286.653
+    },
+    {
+      "source": "st_0011",
+      "target": "st_0002",
+      "distance_km": 251.301
+    },
+    {
+      "source": "st_0011",
+      "target": "st_0003",
+      "distance_km": 236.706
+    },
+    {
+      "source": "st_0011",
+      "target": "st_0004",
+      "distance_km": 198.08
+    },
+    {
+      "source": "st_0011",
+      "target": "st_0005",
+      "distance_km": 171.56
+    },
+    {
+      "source": "st_0011",
+      "target": "st_0006",
+      "distance_km": 142.597
+    },
+    {
+      "source": "st_0011",
+      "target": "st_0007",
+      "distance_km": 108.531
+    },
+    {
+      "source": "st_0011",
+      "target": "st_0008",
+      "distance_km": 84.021
+    },
+    {
+      "source": "st_0011",
+      "target": "st_0009",
+      "distance_km": 54.112
+    },
+    {
+      "source": "st_0011",
+      "target": "st_0010",
+      "distance_km": 20.648
+    },
+    {
+      "source": "st_0011",
+      "target": "st_0012",
+      "distance_km": 41.61
+    },
+    {
+      "source": "st_0011",
+      "target": "st_0013",
+      "distance_km": 62.801
+    },
+    {
+      "source": "st_0011",
+      "target": "st_0014",
+      "distance_km": 95.059
+    },
+    {
+      "source": "st_0011",
+      "target": "st_0015",
+      "distance_km": 121.22
+    },
+    {
+      "source": "st_0011",
+      "target": "dst_bkk_to_kkc",
+      "distance_km": 152.571
+    },
+    {
+      "source": "st_0012",
+      "target": "src_bkk_to_kkc",
+      "distance_km": 389.422
+    },
+    {
+      "source": "st_0012",
+      "target": "st_0000",
+      "distance_km": 354.178
+    },
+    {
+      "source": "st_0012",
+      "target": "st_0001",
+      "distance_km": 328.204
+    },
+    {
+      "source": "st_0012",
+      "target": "st_0002",
+      "distance_km": 292.87
+    },
+    {
+      "source": "st_0012",
+      "target": "st_0003",
+      "distance_km": 278.285
+    },
+    {
+      "source": "st_0012",
+      "target": "st_0004",
+      "distance_km": 239.664
+    },
+    {
+      "source": "st_0012",
+      "target": "st_0005",
+      "distance_km": 213.033
+    },
+    {
+      "source": "st_0012",
+      "target": "st_0006",
+      "distance_km": 184.2
+    },
+    {
+      "source": "st_0012",
+      "target": "st_0007",
+      "distance_km": 150.029
+    },
+    {
+      "source": "st_0012",
+      "target": "st_0008",
+      "distance_km": 125.3
+    },
+    {
+      "source": "st_0012",
+      "target": "st_0009",
+      "distance_km": 95.518
+    },
+    {
+      "source": "st_0012",
+      "target": "st_0010",
+      "distance_km": 62.149
+    },
+    {
+      "source": "st_0012",
+      "target": "st_0011",
+      "distance_km": 41.61
+    },
+    {
+      "source": "st_0012",
+      "target": "st_0013",
+      "distance_km": 22.167
+    },
+    {
+      "source": "st_0012",
+      "target": "st_0014",
+      "distance_km": 53.506
+    },
+    {
+      "source": "st_0012",
+      "target": "st_0015",
+      "distance_km": 79.61
+    },
+    {
+      "source": "st_0012",
+      "target": "dst_bkk_to_kkc",
+      "distance_km": 110.971
+    },
+    {
+      "source": "st_0013",
+      "target": "st_0000",
+      "distance_km": 374.635
+    },
+    {
+      "source": "st_0013",
+      "target": "st_0001",
+      "distance_km": 348.576
+    },
+    {
+      "source": "st_0013",
+      "target": "st_0002",
+      "distance_km": 313.331
+    },
+    {
+      "source": "st_0013",
+      "target": "st_0003",
+      "distance_km": 298.793
+    },
+    {
+      "source": "st_0013",
+      "target": "st_0004",
+      "distance_km": 260.218
+    },
+    {
+      "source": "st_0013",
+      "target": "st_0005",
+      "distance_km": 233.269
+    },
+    {
+      "source": "st_0013",
+      "target": "st_0006",
+      "distance_km": 204.92
+    },
+    {
+      "source": "st_0013",
+      "target": "st_0007",
+      "distance_km": 170.424
+    },
+    {
+      "source": "st_0013",
+      "target": "st_0008",
+      "distance_km": 145.397
+    },
+    {
+      "source": "st_0013",
+      "target": "st_0009",
+      "distance_km": 115.938
+    },
+    {
+      "source": "st_0013",
+      "target": "st_0010",
+      "distance_km": 82.951
+    },
+    {
+      "source": "st_0013",
+      "target": "st_0011",
+      "distance_km": 62.801
+    },
+    {
+      "source": "st_0013",
+      "target": "st_0012",
+      "distance_km": 22.167
+    },
+    {
+      "source": "st_0013",
+      "target": "st_0014",
+      "distance_km": 34.728
+    },
+    {
+      "source": "st_0013",
+      "target": "st_0015",
+      "distance_km": 59.38
+    },
+    {
+      "source": "st_0013",
+      "target": "dst_bkk_to_kkc",
+      "distance_km": 90.9
+    },
+    {
+      "source": "st_0014",
+      "target": "st_0001",
+      "distance_km": 381.701
+    },
+    {
+      "source": "st_0014",
+      "target": "st_0002",
+      "distance_km": 346.358
+    },
+    {
+      "source": "st_0014",
+      "target": "st_0003",
+      "distance_km": 331.765
+    },
+    {
+      "source": "st_0014",
+      "target": "st_0004",
+      "distance_km": 293.14
+    },
+    {
+      "source": "st_0014",
+      "target": "st_0005",
+      "distance_km": 266.539
+    },
+    {
+      "source": "st_0014",
+      "target": "st_0006",
+      "distance_km": 237.646
+    },
+    {
+      "source": "st_0014",
+      "target": "st_0007",
+      "distance_km": 203.534
+    },
+    {
+      "source": "st_0014",
+      "target": "st_0008",
+      "distance_km": 178.785
+    },
+    {
+      "source": "st_0014",
+      "target": "st_0009",
+      "distance_km": 149.024
+    },
+    {
+      "source": "st_0014",
+      "target": "st_0010",
+      "distance_km": 115.644
+    },
+    {
+      "source": "st_0014",
+      "target": "st_0011",
+      "distance_km": 95.059
+    },
+    {
+      "source": "st_0014",
+      "target": "st_0012",
+      "distance_km": 53.506
+    },
+    {
+      "source": "st_0014",
+      "target": "st_0013",
+      "distance_km": 34.728
+    },
+    {
+      "source": "st_0014",
+      "target": "st_0015",
+      "distance_km": 26.595
+    },
+    {
+      "source": "st_0014",
+      "target": "dst_bkk_to_kkc",
+      "distance_km": 57.565
+    },
+    {
+      "source": "st_0015",
+      "target": "st_0002",
+      "distance_km": 372.404
+    },
+    {
+      "source": "st_0015",
+      "target": "st_0003",
+      "distance_km": 357.835
+    },
+    {
+      "source": "st_0015",
+      "target": "st_0004",
+      "distance_km": 319.224
+    },
+    {
+      "source": "st_0015",
+      "target": "st_0005",
+      "distance_km": 292.452
+    },
+    {
+      "source": "st_0015",
+      "target": "st_0006",
+      "distance_km": 263.794
+    },
+    {
+      "source": "st_0015",
+      "target": "st_0007",
+      "distance_km": 229.51
+    },
+    {
+      "source": "st_0015",
+      "target": "st_0008",
+      "distance_km": 204.607
+    },
+    {
+      "source": "st_0015",
+      "target": "st_0009",
+      "distance_km": 174.98
+    },
+    {
+      "source": "st_0015",
+      "target": "st_0010",
+      "distance_km": 141.716
+    },
+    {
+      "source": "st_0015",
+      "target": "st_0011",
+      "distance_km": 121.22
+    },
+    {
+      "source": "st_0015",
+      "target": "st_0012",
+      "distance_km": 79.61
+    },
+    {
+      "source": "st_0015",
+      "target": "st_0013",
+      "distance_km": 59.38
+    },
+    {
+      "source": "st_0015",
+      "target": "st_0014",
+      "distance_km": 26.595
+    },
+    {
+      "source": "st_0015",
+      "target": "dst_bkk_to_kkc",
+      "distance_km": 31.522
+    },
+    {
+      "source": "dst_bkk_to_kkc",
+      "target": "st_0003",
+      "distance_km": 389.251
+    },
+    {
+      "source": "dst_bkk_to_kkc",
+      "target": "st_0004",
+      "distance_km": 350.633
+    },
+    {
+      "source": "dst_bkk_to_kkc",
+      "target": "st_0005",
+      "distance_km": 323.922
+    },
+    {
+      "source": "dst_bkk_to_kkc",
+      "target": "st_0006",
+      "distance_km": 295.168
+    },
+    {
+      "source": "dst_bkk_to_kkc",
+      "target": "st_0007",
+      "distance_km": 260.957
+    },
+    {
+      "source": "dst_bkk_to_kkc",
+      "target": "st_0008",
+      "distance_km": 236.093
+    },
+    {
+      "source": "dst_bkk_to_kkc",
+      "target": "st_0009",
+      "distance_km": 206.428
+    },
+    {
+      "source": "dst_bkk_to_kkc",
+      "target": "st_0010",
+      "distance_km": 173.115
+    },
+    {
+      "source": "dst_bkk_to_kkc",
+      "target": "st_0011",
+      "distance_km": 152.571
+    },
+    {
+      "source": "dst_bkk_to_kkc",
+      "target": "st_0012",
+      "distance_km": 110.971
+    },
+    {
+      "source": "dst_bkk_to_kkc",
+      "target": "st_0013",
+      "distance_km": 90.9
+    },
+    {
+      "source": "dst_bkk_to_kkc",
+      "target": "st_0014",
+      "distance_km": 57.565
+    },
+    {
+      "source": "dst_bkk_to_kkc",
+      "target": "st_0015",
+      "distance_km": 31.522
+    }
+  ],
+  "notes": [
+    "DISTANCE FALLBACK used; stations are synthesised along corridor midline with jitter.",
+    "Road distances = haversine * 1.3 road-factor.",
+    "286 feasible edges under 400 km full-tank range."
+  ],
+  "generated_at": "2026-04-17T16:44:18"
+}

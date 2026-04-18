@@ -1,0 +1,2902 @@
+{
+  "instance_id": "bkk_to_cnx",
+  "label": "Bangkok to Chiang Mai",
+  "collection_method": "distance",
+  "vehicle": {
+    "tank_capacity_l": 40.0,
+    "initial_fuel_l": 28.0,
+    "efficiency_km_per_l": 10.0
+  },
+  "source": "src_bkk_to_cnx",
+  "target": "dst_bkk_to_cnx",
+  "stations": [
+    {
+      "id": "src_bkk_to_cnx",
+      "name": "Victory Monument, Bangkok",
+      "lat": 13.765,
+      "lon": 100.5379,
+      "province": "Bangkok",
+      "price_thb_per_l": 43.58,
+      "price_source": "provincial_avg",
+      "osm_id": null
+    },
+    {
+      "id": "st_0000",
+      "name": "bkk_to_cnx_synthetic_0000",
+      "lat": 13.982764855312146,
+      "lon": 100.52453678077744,
+      "province": "Bangkok",
+      "price_thb_per_l": 43.58,
+      "price_source": "provincial_avg",
+      "osm_id": null
+    },
+    {
+      "id": "st_0001",
+      "name": "bkk_to_cnx_synthetic_0001",
+      "lat": 14.11071010921466,
+      "lon": 100.38812277909126,
+      "province": "Bangkok",
+      "price_thb_per_l": 43.58,
+      "price_source": "provincial_avg",
+      "osm_id": null
+    },
+    {
+      "id": "st_0002",
+      "name": "bkk_to_cnx_synthetic_0002",
+      "lat": 14.358889974174012,
+      "lon": 100.35733423680759,
+      "province": "Bangkok",
+      "price_thb_per_l": 43.58,
+      "price_source": "provincial_avg",
+      "osm_id": null
+    },
+    {
+      "id": "st_0003",
+      "name": "bkk_to_cnx_synthetic_0003",
+      "lat": 14.546330868108614,
+      "lon": 100.3117256450838,
+      "province": "Ayutthaya",
+      "price_thb_per_l": 43.78,
+      "price_source": "provincial_avg",
+      "osm_id": null
+    },
+    {
+      "id": "st_0004",
+      "name": "bkk_to_cnx_synthetic_0004",
+      "lat": 14.689637397952986,
+      "lon": 100.27325159672644,
+      "province": "Ayutthaya",
+      "price_thb_per_l": 43.78,
+      "price_source": "provincial_avg",
+      "osm_id": null
+    },
+    {
+      "id": "st_0005",
+      "name": "bkk_to_cnx_synthetic_0005",
+      "lat": 14.965631448983167,
+      "lon": 100.17628314948293,
+      "province": "Ayutthaya",
+      "price_thb_per_l": 43.78,
+      "price_source": "provincial_avg",
+      "osm_id": null
+    },
+    {
+      "id": "st_0006",
+      "name": "bkk_to_cnx_synthetic_0006",
+      "lat": 15.09273002775294,
+      "lon": 100.1154192197832,
+      "province": "Ayutthaya",
+      "price_thb_per_l": 43.78,
+      "price_source": "provincial_avg",
+      "osm_id": null
+    },
+    {
+      "id": "st_0007",
+      "name": "bkk_to_cnx_synthetic_0007",
+      "lat": 15.301516345388137,
+      "lon": 100.02808226245142,
+      "province": "Ayutthaya",
+      "price_thb_per_l": 43.78,
+      "price_source": "provincial_avg",
+      "osm_id": null
+    },
+    {
+      "id": "st_0008",
+      "name": "bkk_to_cnx_synthetic_0008",
+      "lat": 15.541172322894473,
+      "lon": 99.99355586478764,
+      "province": "Nakhon Sawan",
+      "price_thb_per_l": 44.18,
+      "price_source": "provincial_avg",
+      "osm_id": null
+    },
+    {
+      "id": "st_0009",
+      "name": "bkk_to_cnx_synthetic_0009",
+      "lat": 15.724120998330939,
+      "lon": 99.98774173423955,
+      "province": "Nakhon Sawan",
+      "price_thb_per_l": 44.18,
+      "price_source": "provincial_avg",
+      "osm_id": null
+    },
+    {
+      "id": "st_0010",
+      "name": "bkk_to_cnx_synthetic_0010",
+      "lat": 15.861620752026635,
+      "lon": 99.88678789112497,
+      "province": "Nakhon Sawan",
+      "price_thb_per_l": 44.18,
+      "price_source": "provincial_avg",
+      "osm_id": null
+    },
+    {
+      "id": "st_0011",
+      "name": "bkk_to_cnx_synthetic_0011",
+      "lat": 16.04937898890664,
+      "lon": 99.84809412810749,
+      "province": "Nakhon Sawan",
+      "price_thb_per_l": 44.18,
+      "price_source": "provincial_avg",
+      "osm_id": null
+    },
+    {
+      "id": "st_0012",
+      "name": "bkk_to_cnx_synthetic_0012",
+      "lat": 16.303986996606977,
+      "lon": 99.74811312802267,
+      "province": "Nakhon Sawan",
+      "price_thb_per_l": 44.18,
+      "price_source": "provincial_avg",
+      "osm_id": null
+    },
+    {
+      "id": "st_0013",
+      "name": "bkk_to_cnx_synthetic_0013",
+      "lat": 16.462143514527753,
+      "lon": 99.67900869213109,
+      "province": "Nakhon Sawan",
+      "price_thb_per_l": 44.18,
+      "price_source": "provincial_avg",
+      "osm_id": null
+    },
+    {
+      "id": "st_0014",
+      "name": "bkk_to_cnx_synthetic_0014",
+      "lat": 16.625977898911056,
+      "lon": 99.65715235937964,
+      "province": "Kamphaeng Phet",
+      "price_thb_per_l": 44.38,
+      "price_source": "provincial_avg",
+      "osm_id": null
+    },
+    {
+      "id": "st_0015",
+      "name": "bkk_to_cnx_synthetic_0015",
+      "lat": 16.877738315056273,
+      "lon": 99.63897638807279,
+      "province": "Kamphaeng Phet",
+      "price_thb_per_l": 44.38,
+      "price_source": "provincial_avg",
+      "osm_id": null
+    },
+    {
+      "id": "st_0016",
+      "name": "bkk_to_cnx_synthetic_0016",
+      "lat": 17.06837546419473,
+      "lon": 99.58979135100671,
+      "province": "Kamphaeng Phet",
+      "price_thb_per_l": 44.38,
+      "price_source": "provincial_avg",
+      "osm_id": null
+    },
+    {
+      "id": "st_0017",
+      "name": "bkk_to_cnx_synthetic_0017",
+      "lat": 17.211113829633412,
+      "lon": 99.44444967543198,
+      "province": "Kamphaeng Phet",
+      "price_thb_per_l": 44.38,
+      "price_source": "provincial_avg",
+      "osm_id": null
+    },
+    {
+      "id": "st_0018",
+      "name": "bkk_to_cnx_synthetic_0018",
+      "lat": 17.458885814726585,
+      "lon": 99.44183677093089,
+      "province": "Kamphaeng Phet",
+      "price_thb_per_l": 44.38,
+      "price_source": "provincial_avg",
+      "osm_id": null
+    },
+    {
+      "id": "st_0019",
+      "name": "bkk_to_cnx_synthetic_0019",
+      "lat": 17.626013935732388,
+      "lon": 99.36652314412005,
+      "province": "Lampang",
+      "price_thb_per_l": 44.78,
+      "price_source": "provincial_avg",
+      "osm_id": null
+    },
+    {
+      "id": "st_0020",
+      "name": "bkk_to_cnx_synthetic_0020",
+      "lat": 17.802529204441186,
+      "lon": 99.35093909329024,
+      "province": "Lampang",
+      "price_thb_per_l": 44.78,
+      "price_source": "provincial_avg",
+      "osm_id": null
+    },
+    {
+      "id": "st_0021",
+      "name": "bkk_to_cnx_synthetic_0021",
+      "lat": 18.006514645536974,
+      "lon": 99.23984244652694,
+      "province": "Lampang",
+      "price_thb_per_l": 44.78,
+      "price_source": "provincial_avg",
+      "osm_id": null
+    },
+    {
+      "id": "st_0022",
+      "name": "bkk_to_cnx_synthetic_0022",
+      "lat": 18.225876038901298,
+      "lon": 99.2016302316242,
+      "province": "Lampang",
+      "price_thb_per_l": 44.78,
+      "price_source": "provincial_avg",
+      "osm_id": null
+    },
+    {
+      "id": "st_0023",
+      "name": "bkk_to_cnx_synthetic_0023",
+      "lat": 18.37326733640445,
+      "lon": 99.17012205500781,
+      "province": "Chiang Mai",
+      "price_thb_per_l": 44.88,
+      "price_source": "provincial_avg",
+      "osm_id": null
+    },
+    {
+      "id": "st_0024",
+      "name": "bkk_to_cnx_synthetic_0024",
+      "lat": 18.572177169849894,
+      "lon": 99.05114273704612,
+      "province": "Chiang Mai",
+      "price_thb_per_l": 44.88,
+      "price_source": "provincial_avg",
+      "osm_id": null
+    },
+    {
+      "id": "dst_bkk_to_cnx",
+      "name": "Chiang Mai (Highway 11 terminus)",
+      "lat": 18.8,
+      "lon": 99.018,
+      "province": "Chiang Mai",
+      "price_thb_per_l": 9999.0,
+      "price_source": "destination_sentinel",
+      "osm_id": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "src_bkk_to_cnx",
+      "target": "st_0000",
+      "distance_km": 31.535
+    },
+    {
+      "source": "src_bkk_to_cnx",
+      "target": "st_0001",
+      "distance_km": 54.212
+    },
+    {
+      "source": "src_bkk_to_cnx",
+      "target": "st_0002",
+      "distance_km": 89.505
+    },
+    {
+      "source": "src_bkk_to_cnx",
+      "target": "st_0003",
+      "distance_km": 117.309
+    },
+    {
+      "source": "src_bkk_to_cnx",
+      "target": "st_0004",
+      "distance_km": 138.708
+    },
+    {
+      "source": "src_bkk_to_cnx",
+      "target": "st_0005",
+      "distance_km": 180.792
+    },
+    {
+      "source": "src_bkk_to_cnx",
+      "target": "st_0006",
+      "distance_km": 200.834
+    },
+    {
+      "source": "src_bkk_to_cnx",
+      "target": "st_0007",
+      "distance_km": 233.283
+    },
+    {
+      "source": "src_bkk_to_cnx",
+      "target": "st_0008",
+      "distance_km": 267.799
+    },
+    {
+      "source": "src_bkk_to_cnx",
+      "target": "st_0009",
+      "distance_km": 293.454
+    },
+    {
+      "source": "src_bkk_to_cnx",
+      "target": "st_0010",
+      "distance_km": 316.437
+    },
+    {
+      "source": "src_bkk_to_cnx",
+      "target": "st_0011",
+      "distance_km": 343.985
+    },
+    {
+      "source": "src_bkk_to_cnx",
+      "target": "st_0012",
+      "distance_km": 383.221
+    },
+    {
+      "source": "st_0000",
+      "target": "src_bkk_to_cnx",
+      "distance_km": 31.535
+    },
+    {
+      "source": "st_0000",
+      "target": "st_0001",
+      "distance_km": 26.608
+    },
+    {
+      "source": "st_0000",
+      "target": "st_0002",
+      "distance_km": 59.205
+    },
+    {
+      "source": "st_0000",
+      "target": "st_0003",
+      "distance_km": 86.75
+    },
+    {
+      "source": "st_0000",
+      "target": "st_0004",
+      "distance_km": 108.072
+    },
+    {
+      "source": "st_0000",
+      "target": "st_0005",
+      "distance_km": 150.206
+    },
+    {
+      "source": "st_0000",
+      "target": "st_0006",
+      "distance_km": 170.356
+    },
+    {
+      "source": "st_0000",
+      "target": "st_0007",
+      "distance_km": 202.881
+    },
+    {
+      "source": "st_0000",
+      "target": "st_0008",
+      "distance_km": 237.185
+    },
+    {
+      "source": "st_0000",
+      "target": "st_0009",
+      "distance_km": 262.655
+    },
+    {
+      "source": "st_0000",
+      "target": "st_0010",
+      "distance_km": 285.829
+    },
+    {
+      "source": "st_0000",
+      "target": "st_0011",
+      "distance_km": 313.308
+    },
+    {
+      "source": "st_0000",
+      "target": "st_0012",
+      "distance_km": 352.594
+    },
+    {
+      "source": "st_0000",
+      "target": "st_0013",
+      "distance_km": 377.305
+    },
+    {
+      "source": "st_0001",
+      "target": "src_bkk_to_cnx",
+      "distance_km": 54.212
+    },
+    {
+      "source": "st_0001",
+      "target": "st_0000",
+      "distance_km": 26.608
+    },
+    {
+      "source": "st_0001",
+      "target": "st_0002",
+      "distance_km": 36.134
+    },
+    {
+      "source": "st_0001",
+      "target": "st_0003",
+      "distance_km": 63.873
+    },
+    {
+      "source": "st_0001",
+      "target": "st_0004",
+      "distance_km": 85.218
+    },
+    {
+      "source": "st_0001",
+      "target": "st_0005",
+      "distance_km": 127.087
+    },
+    {
+      "source": "st_0001",
+      "target": "st_0006",
+      "distance_km": 146.991
+    },
+    {
+      "source": "st_0001",
+      "target": "st_0007",
+      "distance_km": 179.345
+    },
+    {
+      "source": "st_0001",
+      "target": "st_0008",
+      "distance_km": 214.003
+    },
+    {
+      "source": "st_0001",
+      "target": "st_0009",
+      "distance_km": 239.835
+    },
+    {
+      "source": "st_0001",
+      "target": "st_0010",
+      "distance_km": 262.602
+    },
+    {
+      "source": "st_0001",
+      "target": "st_0011",
+      "distance_km": 290.2
+    },
+    {
+      "source": "st_0001",
+      "target": "st_0012",
+      "distance_km": 329.374
+    },
+    {
+      "source": "st_0001",
+      "target": "st_0013",
+      "distance_km": 353.995
+    },
+    {
+      "source": "st_0001",
+      "target": "st_0014",
+      "distance_km": 377.594
+    },
+    {
+      "source": "st_0002",
+      "target": "src_bkk_to_cnx",
+      "distance_km": 89.505
+    },
+    {
+      "source": "st_0002",
+      "target": "st_0000",
+      "distance_km": 59.205
+    },
+    {
+      "source": "st_0002",
+      "target": "st_0001",
+      "distance_km": 36.134
+    },
+    {
+      "source": "st_0002",
+      "target": "st_0003",
+      "distance_km": 27.837
+    },
+    {
+      "source": "st_0002",
+      "target": "st_0004",
+      "distance_km": 49.237
+    },
+    {
+      "source": "st_0002",
+      "target": "st_0005",
+      "distance_km": 91.288
+    },
+    {
+      "source": "st_0002",
+      "target": "st_0006",
+      "distance_km": 111.34
+    },
+    {
+      "source": "st_0002",
+      "target": "st_0007",
+      "distance_km": 143.818
+    },
+    {
+      "source": "st_0002",
+      "target": "st_0008",
+      "distance_km": 178.295
+    },
+    {
+      "source": "st_0002",
+      "target": "st_0009",
+      "distance_km": 203.982
+    },
+    {
+      "source": "st_0002",
+      "target": "st_0010",
+      "distance_km": 226.933
+    },
+    {
+      "source": "st_0002",
+      "target": "st_0011",
+      "distance_km": 254.481
+    },
+    {
+      "source": "st_0002",
+      "target": "st_0012",
+      "distance_km": 293.717
+    },
+    {
+      "source": "st_0002",
+      "target": "st_0013",
+      "distance_km": 318.387
+    },
+    {
+      "source": "st_0002",
+      "target": "st_0014",
+      "distance_km": 341.92
+    },
+    {
+      "source": "st_0002",
+      "target": "st_0015",
+      "distance_km": 377.59
+    },
+    {
+      "source": "st_0003",
+      "target": "src_bkk_to_cnx",
+      "distance_km": 117.309
+    },
+    {
+      "source": "st_0003",
+      "target": "st_0000",
+      "distance_km": 86.75
+    },
+    {
+      "source": "st_0003",
+      "target": "st_0001",
+      "distance_km": 63.873
+    },
+    {
+      "source": "st_0003",
+      "target": "st_0002",
+      "distance_km": 27.837
+    },
+    {
+      "source": "st_0003",
+      "target": "st_0004",
+      "distance_km": 21.403
+    },
+    {
+      "source": "st_0003",
+      "target": "st_0005",
+      "distance_km": 63.5
+    },
+    {
+      "source": "st_0003",
+      "target": "st_0006",
+      "distance_km": 83.612
+    },
+    {
+      "source": "st_0003",
+      "target": "st_0007",
+      "distance_km": 116.132
+    },
+    {
+      "source": "st_0003",
+      "target": "st_0008",
+      "distance_km": 150.511
+    },
+    {
+      "source": "st_0003",
+      "target": "st_0009",
+      "distance_km": 176.154
+    },
+    {
+      "source": "st_0003",
+      "target": "st_0010",
+      "distance_km": 199.155
+    },
+    {
+      "source": "st_0003",
+      "target": "st_0011",
+      "distance_km": 226.683
+    },
+    {
+      "source": "st_0003",
+      "target": "st_0012",
+      "distance_km": 265.936
+    },
+    {
+      "source": "st_0003",
+      "target": "st_0013",
+      "distance_km": 290.622
+    },
+    {
+      "source": "st_0003",
+      "target": "st_0014",
+      "distance_km": 314.131
+    },
+    {
+      "source": "st_0003",
+      "target": "st_0015",
+      "distance_km": 349.772
+    },
+    {
+      "source": "st_0003",
+      "target": "st_0016",
+      "distance_km": 378.143
+    },
+    {
+      "source": "st_0004",
+      "target": "src_bkk_to_cnx",
+      "distance_km": 138.708
+    },
+    {
+      "source": "st_0004",
+      "target": "st_0000",
+      "distance_km": 108.072
+    },
+    {
+      "source": "st_0004",
+      "target": "st_0001",
+      "distance_km": 85.218
+    },
+    {
+      "source": "st_0004",
+      "target": "st_0002",
+      "distance_km": 49.237
+    },
+    {
+      "source": "st_0004",
+      "target": "st_0003",
+      "distance_km": 21.403
+    },
+    {
+      "source": "st_0004",
+      "target": "st_0005",
+      "distance_km": 42.134
+    },
+    {
+      "source": "st_0004",
+      "target": "st_0006",
+      "distance_km": 62.301
+    },
+    {
+      "source": "st_0004",
+      "target": "st_0007",
+      "distance_km": 94.843
+    },
+    {
+      "source": "st_0004",
+      "target": "st_0008",
+      "distance_km": 129.133
+    },
+    {
+      "source": "st_0004",
+      "target": "st_0009",
+      "distance_km": 154.751
+    },
+    {
+      "source": "st_0004",
+      "target": "st_0010",
+      "distance_km": 177.779
+    },
+    {
+      "source": "st_0004",
+      "target": "st_0011",
+      "distance_km": 205.294
+    },
+    {
+      "source": "st_0004",
+      "target": "st_0012",
+      "distance_km": 244.556
+    },
+    {
+      "source": "st_0004",
+      "target": "st_0013",
+      "distance_km": 269.251
+    },
+    {
+      "source": "st_0004",
+      "target": "st_0014",
+      "distance_km": 292.745
+    },
+    {
+      "source": "st_0004",
+      "target": "st_0015",
+      "distance_km": 328.371
+    },
+    {
+      "source": "st_0004",
+      "target": "st_0016",
+      "distance_km": 356.742
+    },
+    {
+      "source": "st_0004",
+      "target": "st_0017",
+      "distance_km": 382.255
+    },
+    {
+      "source": "st_0005",
+      "target": "src_bkk_to_cnx",
+      "distance_km": 180.792
+    },
+    {
+      "source": "st_0005",
+      "target": "st_0000",
+      "distance_km": 150.206
+    },
+    {
+      "source": "st_0005",
+      "target": "st_0001",
+      "distance_km": 127.087
+    },
+    {
+      "source": "st_0005",
+      "target": "st_0002",
+      "distance_km": 91.288
+    },
+    {
+      "source": "st_0005",
+      "target": "st_0003",
+      "distance_km": 63.5
+    },
+    {
+      "source": "st_0005",
+      "target": "st_0004",
+      "distance_km": 42.134
+    },
+    {
+      "source": "st_0005",
+      "target": "st_0006",
+      "distance_km": 20.242
+    },
+    {
+      "source": "st_0005",
+      "target": "st_0007",
+      "distance_km": 52.774
+    },
+    {
+      "source": "st_0005",
+      "target": "st_0008",
+      "distance_km": 87.012
+    },
+    {
+      "source": "st_0005",
+      "target": "st_0009",
+      "distance_km": 112.749
+    },
+    {
+      "source": "st_0005",
+      "target": "st_0010",
+      "distance_km": 135.656
+    },
+    {
+      "source": "st_0005",
+      "target": "st_0011",
+      "distance_km": 163.193
+    },
+    {
+      "source": "st_0005",
+      "target": "st_0012",
+      "distance_km": 202.437
+    },
+    {
+      "source": "st_0005",
+      "target": "st_0013",
+      "distance_km": 227.123
+    },
+    {
+      "source": "st_0005",
+      "target": "st_0014",
+      "distance_km": 250.635
+    },
+    {
+      "source": "st_0005",
+      "target": "st_0015",
+      "distance_km": 286.314
+    },
+    {
+      "source": "st_0005",
+      "target": "st_0016",
+      "distance_km": 314.691
+    },
+    {
+      "source": "st_0005",
+      "target": "st_0017",
+      "distance_km": 340.133
+    },
+    {
+      "source": "st_0005",
+      "target": "st_0018",
+      "distance_km": 374.547
+    },
+    {
+      "source": "st_0006",
+      "target": "src_bkk_to_cnx",
+      "distance_km": 200.834
+    },
+    {
+      "source": "st_0006",
+      "target": "st_0000",
+      "distance_km": 170.356
+    },
+    {
+      "source": "st_0006",
+      "target": "st_0001",
+      "distance_km": 146.991
+    },
+    {
+      "source": "st_0006",
+      "target": "st_0002",
+      "distance_km": 111.34
+    },
+    {
+      "source": "st_0006",
+      "target": "st_0003",
+      "distance_km": 83.612
+    },
+    {
+      "source": "st_0006",
+      "target": "st_0004",
+      "distance_km": 62.301
+    },
+    {
+      "source": "st_0006",
+      "target": "st_0005",
+      "distance_km": 20.242
+    },
+    {
+      "source": "st_0006",
+      "target": "st_0007",
+      "distance_km": 32.547
+    },
+    {
+      "source": "st_0006",
+      "target": "st_0008",
+      "distance_km": 67.013
+    },
+    {
+      "source": "st_0006",
+      "target": "st_0009",
+      "distance_km": 92.988
+    },
+    {
+      "source": "st_0006",
+      "target": "st_0010",
+      "distance_km": 115.62
+    },
+    {
+      "source": "st_0006",
+      "target": "st_0011",
+      "distance_km": 143.209
+    },
+    {
+      "source": "st_0006",
+      "target": "st_0012",
+      "distance_km": 182.4
+    },
+    {
+      "source": "st_0006",
+      "target": "st_0013",
+      "distance_km": 207.053
+    },
+    {
+      "source": "st_0006",
+      "target": "st_0014",
+      "distance_km": 230.614
+    },
+    {
+      "source": "st_0006",
+      "target": "st_0015",
+      "distance_km": 266.387
+    },
+    {
+      "source": "st_0006",
+      "target": "st_0016",
+      "distance_km": 294.77
+    },
+    {
+      "source": "st_0006",
+      "target": "st_0017",
+      "distance_km": 320.076
+    },
+    {
+      "source": "st_0006",
+      "target": "st_0018",
+      "distance_km": 354.575
+    },
+    {
+      "source": "st_0006",
+      "target": "st_0019",
+      "distance_km": 380.639
+    },
+    {
+      "source": "st_0007",
+      "target": "src_bkk_to_cnx",
+      "distance_km": 233.283
+    },
+    {
+      "source": "st_0007",
+      "target": "st_0000",
+      "distance_km": 202.881
+    },
+    {
+      "source": "st_0007",
+      "target": "st_0001",
+      "distance_km": 179.345
+    },
+    {
+      "source": "st_0007",
+      "target": "st_0002",
+      "distance_km": 143.818
+    },
+    {
+      "source": "st_0007",
+      "target": "st_0003",
+      "distance_km": 116.132
+    },
+    {
+      "source": "st_0007",
+      "target": "st_0004",
+      "distance_km": 94.843
+    },
+    {
+      "source": "st_0007",
+      "target": "st_0005",
+      "distance_km": 52.774
+    },
+    {
+      "source": "st_0007",
+      "target": "st_0006",
+      "distance_km": 32.547
+    },
+    {
+      "source": "st_0007",
+      "target": "st_0008",
+      "distance_km": 34.976
+    },
+    {
+      "source": "st_0007",
+      "target": "st_0009",
+      "distance_km": 61.347
+    },
+    {
+      "source": "st_0007",
+      "target": "st_0010",
+      "distance_km": 83.321
+    },
+    {
+      "source": "st_0007",
+      "target": "st_0011",
+      "distance_km": 110.971
+    },
+    {
+      "source": "st_0007",
+      "target": "st_0012",
+      "distance_km": 150.052
+    },
+    {
+      "source": "st_0007",
+      "target": "st_0013",
+      "distance_km": 174.651
+    },
+    {
+      "source": "st_0007",
+      "target": "st_0014",
+      "distance_km": 198.274
+    },
+    {
+      "source": "st_0007",
+      "target": "st_0015",
+      "distance_km": 234.17
+    },
+    {
+      "source": "st_0007",
+      "target": "st_0016",
+      "distance_km": 262.553
+    },
+    {
+      "source": "st_0007",
+      "target": "st_0017",
+      "distance_km": 287.675
+    },
+    {
+      "source": "st_0007",
+      "target": "st_0018",
+      "distance_km": 322.278
+    },
+    {
+      "source": "st_0007",
+      "target": "st_0019",
+      "distance_km": 348.303
+    },
+    {
+      "source": "st_0007",
+      "target": "st_0020",
+      "distance_km": 373.505
+    },
+    {
+      "source": "st_0008",
+      "target": "src_bkk_to_cnx",
+      "distance_km": 267.799
+    },
+    {
+      "source": "st_0008",
+      "target": "st_0000",
+      "distance_km": 237.185
+    },
+    {
+      "source": "st_0008",
+      "target": "st_0001",
+      "distance_km": 214.003
+    },
+    {
+      "source": "st_0008",
+      "target": "st_0002",
+      "distance_km": 178.295
+    },
+    {
+      "source": "st_0008",
+      "target": "st_0003",
+      "distance_km": 150.511
+    },
+    {
+      "source": "st_0008",
+      "target": "st_0004",
+      "distance_km": 129.133
+    },
+    {
+      "source": "st_0008",
+      "target": "st_0005",
+      "distance_km": 87.012
+    },
+    {
+      "source": "st_0008",
+      "target": "st_0006",
+      "distance_km": 67.013
+    },
+    {
+      "source": "st_0008",
+      "target": "st_0007",
+      "distance_km": 34.976
+    },
+    {
+      "source": "st_0008",
+      "target": "st_0009",
+      "distance_km": 26.458
+    },
+    {
+      "source": "st_0008",
+      "target": "st_0010",
+      "distance_km": 48.646
+    },
+    {
+      "source": "st_0008",
+      "target": "st_0011",
+      "distance_km": 76.198
+    },
+    {
+      "source": "st_0008",
+      "target": "st_0012",
+      "distance_km": 115.425
+    },
+    {
+      "source": "st_0008",
+      "target": "st_0013",
+      "distance_km": 140.121
+    },
+    {
+      "source": "st_0008",
+      "target": "st_0014",
+      "distance_km": 163.626
+    },
+    {
+      "source": "st_0008",
+      "target": "st_0015",
+      "distance_km": 199.376
+    },
+    {
+      "source": "st_0008",
+      "target": "st_0016",
+      "distance_km": 227.759
+    },
+    {
+      "source": "st_0008",
+      "target": "st_0017",
+      "distance_km": 253.123
+    },
+    {
+      "source": "st_0008",
+      "target": "st_0018",
+      "distance_km": 287.565
+    },
+    {
+      "source": "st_0008",
+      "target": "st_0019",
+      "distance_km": 313.64
+    },
+    {
+      "source": "st_0008",
+      "target": "st_0020",
+      "distance_km": 338.781
+    },
+    {
+      "source": "st_0008",
+      "target": "st_0021",
+      "distance_km": 371.325
+    },
+    {
+      "source": "st_0009",
+      "target": "src_bkk_to_cnx",
+      "distance_km": 293.454
+    },
+    {
+      "source": "st_0009",
+      "target": "st_0000",
+      "distance_km": 262.655
+    },
+    {
+      "source": "st_0009",
+      "target": "st_0001",
+      "distance_km": 239.835
+    },
+    {
+      "source": "st_0009",
+      "target": "st_0002",
+      "distance_km": 203.982
+    },
+    {
+      "source": "st_0009",
+      "target": "st_0003",
+      "distance_km": 176.154
+    },
+    {
+      "source": "st_0009",
+      "target": "st_0004",
+      "distance_km": 154.751
+    },
+    {
+      "source": "st_0009",
+      "target": "st_0005",
+      "distance_km": 112.749
+    },
+    {
+      "source": "st_0009",
+      "target": "st_0006",
+      "distance_km": 92.988
+    },
+    {
+      "source": "st_0009",
+      "target": "st_0007",
+      "distance_km": 61.347
+    },
+    {
+      "source": "st_0009",
+      "target": "st_0008",
+      "distance_km": 26.458
+    },
+    {
+      "source": "st_0009",
+      "target": "st_0010",
+      "distance_km": 24.336
+    },
+    {
+      "source": "st_0009",
+      "target": "st_0011",
+      "distance_km": 50.868
+    },
+    {
+      "source": "st_0009",
+      "target": "st_0012",
+      "distance_km": 90.192
+    },
+    {
+      "source": "st_0009",
+      "target": "st_0013",
+      "distance_km": 114.979
+    },
+    {
+      "source": "st_0009",
+      "target": "st_0014",
+      "distance_km": 138.21
+    },
+    {
+      "source": "st_0009",
+      "target": "st_0015",
+      "distance_km": 173.638
+    },
+    {
+      "source": "st_0009",
+      "target": "st_0016",
+      "distance_km": 202.001
+    },
+    {
+      "source": "st_0009",
+      "target": "st_0017",
+      "distance_km": 227.761
+    },
+    {
+      "source": "st_0009",
+      "target": "st_0018",
+      "distance_km": 261.921
+    },
+    {
+      "source": "st_0009",
+      "target": "st_0019",
+      "distance_km": 288.068
+    },
+    {
+      "source": "st_0009",
+      "target": "st_0020",
+      "distance_km": 313.102
+    },
+    {
+      "source": "st_0009",
+      "target": "st_0021",
+      "distance_km": 345.767
+    },
+    {
+      "source": "st_0009",
+      "target": "st_0022",
+      "distance_km": 377.613
+    },
+    {
+      "source": "st_0009",
+      "target": "st_0023",
+      "distance_km": 399.263
+    },
+    {
+      "source": "st_0010",
+      "target": "src_bkk_to_cnx",
+      "distance_km": 316.437
+    },
+    {
+      "source": "st_0010",
+      "target": "st_0000",
+      "distance_km": 285.829
+    },
+    {
+      "source": "st_0010",
+      "target": "st_0001",
+      "distance_km": 262.602
+    },
+    {
+      "source": "st_0010",
+      "target": "st_0002",
+      "distance_km": 226.933
+    },
+    {
+      "source": "st_0010",
+      "target": "st_0003",
+      "distance_km": 199.155
+    },
+    {
+      "source": "st_0010",
+      "target": "st_0004",
+      "distance_km": 177.779
+    },
+    {
+      "source": "st_0010",
+      "target": "st_0005",
+      "distance_km": 135.656
+    },
+    {
+      "source": "st_0010",
+      "target": "st_0006",
+      "distance_km": 115.62
+    },
+    {
+      "source": "st_0010",
+      "target": "st_0007",
+      "distance_km": 83.321
+    },
+    {
+      "source": "st_0010",
+      "target": "st_0008",
+      "distance_km": 48.646
+    },
+    {
+      "source": "st_0010",
+      "target": "st_0009",
+      "distance_km": 24.336
+    },
+    {
+      "source": "st_0010",
+      "target": "st_0011",
+      "distance_km": 27.669
+    },
+    {
+      "source": "st_0010",
+      "target": "st_0012",
+      "distance_km": 66.784
+    },
+    {
+      "source": "st_0010",
+      "target": "st_0013",
+      "distance_km": 91.476
+    },
+    {
+      "source": "st_0010",
+      "target": "st_0014",
+      "distance_km": 114.995
+    },
+    {
+      "source": "st_0010",
+      "target": "st_0015",
+      "distance_km": 150.851
+    },
+    {
+      "source": "st_0010",
+      "target": "st_0016",
+      "distance_km": 179.233
+    },
+    {
+      "source": "st_0010",
+      "target": "st_0017",
+      "distance_km": 204.477
+    },
+    {
+      "source": "st_0010",
+      "target": "st_0018",
+      "distance_km": 238.971
+    },
+    {
+      "source": "st_0010",
+      "target": "st_0019",
+      "distance_km": 265.021
+    },
+    {
+      "source": "st_0010",
+      "target": "st_0020",
+      "distance_km": 290.195
+    },
+    {
+      "source": "st_0010",
+      "target": "st_0021",
+      "distance_km": 322.699
+    },
+    {
+      "source": "st_0010",
+      "target": "st_0022",
+      "distance_km": 354.635
+    },
+    {
+      "source": "st_0010",
+      "target": "st_0023",
+      "distance_km": 376.322
+    },
+    {
+      "source": "st_0011",
+      "target": "src_bkk_to_cnx",
+      "distance_km": 343.985
+    },
+    {
+      "source": "st_0011",
+      "target": "st_0000",
+      "distance_km": 313.308
+    },
+    {
+      "source": "st_0011",
+      "target": "st_0001",
+      "distance_km": 290.2
+    },
+    {
+      "source": "st_0011",
+      "target": "st_0002",
+      "distance_km": 254.481
+    },
+    {
+      "source": "st_0011",
+      "target": "st_0003",
+      "distance_km": 226.683
+    },
+    {
+      "source": "st_0011",
+      "target": "st_0004",
+      "distance_km": 205.294
+    },
+    {
+      "source": "st_0011",
+      "target": "st_0005",
+      "distance_km": 163.193
+    },
+    {
+      "source": "st_0011",
+      "target": "st_0006",
+      "distance_km": 143.209
+    },
+    {
+      "source": "st_0011",
+      "target": "st_0007",
+      "distance_km": 110.971
+    },
+    {
+      "source": "st_0011",
+      "target": "st_0008",
+      "distance_km": 76.198
+    },
+    {
+      "source": "st_0011",
+      "target": "st_0009",
+      "distance_km": 50.868
+    },
+    {
+      "source": "st_0011",
+      "target": "st_0010",
+      "distance_km": 27.669
+    },
+    {
+      "source": "st_0011",
+      "target": "st_0012",
+      "distance_km": 39.335
+    },
+    {
+      "source": "st_0011",
+      "target": "st_0013",
+      "distance_km": 64.115
+    },
+    {
+      "source": "st_0011",
+      "target": "st_0014",
+      "distance_km": 87.457
+    },
+    {
+      "source": "st_0011",
+      "target": "st_0015",
+      "distance_km": 123.201
+    },
+    {
+      "source": "st_0011",
+      "target": "st_0016",
+      "distance_km": 151.585
+    },
+    {
+      "source": "st_0011",
+      "target": "st_0017",
+      "distance_km": 176.994
+    },
+    {
+      "source": "st_0011",
+      "target": "st_0018",
+      "distance_km": 211.366
+    },
+    {
+      "source": "st_0011",
+      "target": "st_0019",
+      "distance_km": 237.447
+    },
+    {
+      "source": "st_0011",
+      "target": "st_0020",
+      "distance_km": 262.584
+    },
+    {
+      "source": "st_0011",
+      "target": "st_0021",
+      "distance_km": 295.137
+    },
+    {
+      "source": "st_0011",
+      "target": "st_0022",
+      "distance_km": 327.046
+    },
+    {
+      "source": "st_0011",
+      "target": "st_0023",
+      "distance_km": 348.724
+    },
+    {
+      "source": "st_0011",
+      "target": "st_0024",
+      "distance_km": 380.9
+    },
+    {
+      "source": "st_0012",
+      "target": "src_bkk_to_cnx",
+      "distance_km": 383.221
+    },
+    {
+      "source": "st_0012",
+      "target": "st_0000",
+      "distance_km": 352.594
+    },
+    {
+      "source": "st_0012",
+      "target": "st_0001",
+      "distance_km": 329.374
+    },
+    {
+      "source": "st_0012",
+      "target": "st_0002",
+      "distance_km": 293.717
+    },
+    {
+      "source": "st_0012",
+      "target": "st_0003",
+      "distance_km": 265.936
+    },
+    {
+      "source": "st_0012",
+      "target": "st_0004",
+      "distance_km": 244.556
+    },
+    {
+      "source": "st_0012",
+      "target": "st_0005",
+      "distance_km": 202.437
+    },
+    {
+      "source": "st_0012",
+      "target": "st_0006",
+      "distance_km": 182.4
+    },
+    {
+      "source": "st_0012",
+      "target": "st_0007",
+      "distance_km": 150.052
+    },
+    {
+      "source": "st_0012",
+      "target": "st_0008",
+      "distance_km": 115.425
+    },
+    {
+      "source": "st_0012",
+      "target": "st_0009",
+      "distance_km": 90.192
+    },
+    {
+      "source": "st_0012",
+      "target": "st_0010",
+      "distance_km": 66.784
+    },
+    {
+      "source": "st_0012",
+      "target": "st_0011",
+      "distance_km": 39.335
+    },
+    {
+      "source": "st_0012",
+      "target": "st_0013",
+      "distance_km": 24.79
+    },
+    {
+      "source": "st_0012",
+      "target": "st_0014",
+      "distance_km": 48.223
+    },
+    {
+      "source": "st_0012",
+      "target": "st_0015",
+      "distance_km": 84.305
+    },
+    {
+      "source": "st_0012",
+      "target": "st_0016",
+      "distance_km": 112.649
+    },
+    {
+      "source": "st_0012",
+      "target": "st_0017",
+      "distance_km": 137.7
+    },
+    {
+      "source": "st_0012",
+      "target": "st_0018",
+      "distance_km": 172.236
+    },
+    {
+      "source": "st_0012",
+      "target": "st_0019",
+      "distance_km": 198.253
+    },
+    {
+      "source": "st_0012",
+      "target": "st_0020",
+      "distance_km": 223.465
+    },
+    {
+      "source": "st_0012",
+      "target": "st_0021",
+      "distance_km": 255.923
+    },
+    {
+      "source": "st_0012",
+      "target": "st_0022",
+      "distance_km": 287.875
+    },
+    {
+      "source": "st_0012",
+      "target": "st_0023",
+      "distance_km": 309.57
+    },
+    {
+      "source": "st_0012",
+      "target": "st_0024",
+      "distance_km": 341.671
+    },
+    {
+      "source": "st_0012",
+      "target": "dst_bkk_to_cnx",
+      "distance_km": 374.574
+    },
+    {
+      "source": "st_0013",
+      "target": "st_0000",
+      "distance_km": 377.305
+    },
+    {
+      "source": "st_0013",
+      "target": "st_0001",
+      "distance_km": 353.995
+    },
+    {
+      "source": "st_0013",
+      "target": "st_0002",
+      "distance_km": 318.387
+    },
+    {
+      "source": "st_0013",
+      "target": "st_0003",
+      "distance_km": 290.622
+    },
+    {
+      "source": "st_0013",
+      "target": "st_0004",
+      "distance_km": 269.251
+    },
+    {
+      "source": "st_0013",
+      "target": "st_0005",
+      "distance_km": 227.123
+    },
+    {
+      "source": "st_0013",
+      "target": "st_0006",
+      "distance_km": 207.053
+    },
+    {
+      "source": "st_0013",
+      "target": "st_0007",
+      "distance_km": 174.651
+    },
+    {
+      "source": "st_0013",
+      "target": "st_0008",
+      "distance_km": 140.121
+    },
+    {
+      "source": "st_0013",
+      "target": "st_0009",
+      "distance_km": 114.979
+    },
+    {
+      "source": "st_0013",
+      "target": "st_0010",
+      "distance_km": 91.476
+    },
+    {
+      "source": "st_0013",
+      "target": "st_0011",
+      "distance_km": 64.115
+    },
+    {
+      "source": "st_0013",
+      "target": "st_0012",
+      "distance_km": 24.79
+    },
+    {
+      "source": "st_0013",
+      "target": "st_0014",
+      "distance_km": 23.876
+    },
+    {
+      "source": "st_0013",
+      "target": "st_0015",
+      "distance_km": 60.331
+    },
+    {
+      "source": "st_0013",
+      "target": "st_0016",
+      "distance_km": 88.499
+    },
+    {
+      "source": "st_0013",
+      "target": "st_0017",
+      "distance_km": 113.026
+    },
+    {
+      "source": "st_0013",
+      "target": "st_0018",
+      "distance_km": 147.767
+    },
+    {
+      "source": "st_0013",
+      "target": "st_0019",
+      "distance_km": 173.696
+    },
+    {
+      "source": "st_0013",
+      "target": "st_0020",
+      "distance_km": 198.987
+    },
+    {
+      "source": "st_0013",
+      "target": "st_0021",
+      "distance_km": 231.331
+    },
+    {
+      "source": "st_0013",
+      "target": "st_0022",
+      "distance_km": 263.324
+    },
+    {
+      "source": "st_0013",
+      "target": "st_0023",
+      "distance_km": 285.036
+    },
+    {
+      "source": "st_0013",
+      "target": "st_0024",
+      "distance_km": 317.054
+    },
+    {
+      "source": "st_0013",
+      "target": "dst_bkk_to_cnx",
+      "distance_km": 349.997
+    },
+    {
+      "source": "st_0014",
+      "target": "st_0001",
+      "distance_km": 377.594
+    },
+    {
+      "source": "st_0014",
+      "target": "st_0002",
+      "distance_km": 341.92
+    },
+    {
+      "source": "st_0014",
+      "target": "st_0003",
+      "distance_km": 314.131
+    },
+    {
+      "source": "st_0014",
+      "target": "st_0004",
+      "distance_km": 292.745
+    },
+    {
+      "source": "st_0014",
+      "target": "st_0005",
+      "distance_km": 250.635
+    },
+    {
+      "source": "st_0014",
+      "target": "st_0006",
+      "distance_km": 230.614
+    },
+    {
+      "source": "st_0014",
+      "target": "st_0007",
+      "distance_km": 198.274
+    },
+    {
+      "source": "st_0014",
+      "target": "st_0008",
+      "distance_km": 163.626
+    },
+    {
+      "source": "st_0014",
+      "target": "st_0009",
+      "distance_km": 138.21
+    },
+    {
+      "source": "st_0014",
+      "target": "st_0010",
+      "distance_km": 114.995
+    },
+    {
+      "source": "st_0014",
+      "target": "st_0011",
+      "distance_km": 87.457
+    },
+    {
+      "source": "st_0014",
+      "target": "st_0012",
+      "distance_km": 48.223
+    },
+    {
+      "source": "st_0014",
+      "target": "st_0013",
+      "distance_km": 23.876
+    },
+    {
+      "source": "st_0014",
+      "target": "st_0015",
+      "distance_km": 36.48
+    },
+    {
+      "source": "st_0014",
+      "target": "st_0016",
+      "distance_km": 64.626
+    },
+    {
+      "source": "st_0014",
+      "target": "st_0017",
+      "distance_km": 89.553
+    },
+    {
+      "source": "st_0014",
+      "target": "st_0018",
+      "distance_km": 124.023
+    },
+    {
+      "source": "st_0014",
+      "target": "st_0019",
+      "distance_km": 150.03
+    },
+    {
+      "source": "st_0014",
+      "target": "st_0020",
+      "distance_km": 175.251
+    },
+    {
+      "source": "st_0014",
+      "target": "st_0021",
+      "distance_km": 207.705
+    },
+    {
+      "source": "st_0014",
+      "target": "st_0022",
+      "distance_km": 239.652
+    },
+    {
+      "source": "st_0014",
+      "target": "st_0023",
+      "distance_km": 261.348
+    },
+    {
+      "source": "st_0014",
+      "target": "st_0024",
+      "distance_km": 293.459
+    },
+    {
+      "source": "st_0014",
+      "target": "dst_bkk_to_cnx",
+      "distance_km": 326.352
+    },
+    {
+      "source": "st_0015",
+      "target": "st_0002",
+      "distance_km": 377.59
+    },
+    {
+      "source": "st_0015",
+      "target": "st_0003",
+      "distance_km": 349.772
+    },
+    {
+      "source": "st_0015",
+      "target": "st_0004",
+      "distance_km": 328.371
+    },
+    {
+      "source": "st_0015",
+      "target": "st_0005",
+      "distance_km": 286.314
+    },
+    {
+      "source": "st_0015",
+      "target": "st_0006",
+      "distance_km": 266.387
+    },
+    {
+      "source": "st_0015",
+      "target": "st_0007",
+      "distance_km": 234.17
+    },
+    {
+      "source": "st_0015",
+      "target": "st_0008",
+      "distance_km": 199.376
+    },
+    {
+      "source": "st_0015",
+      "target": "st_0009",
+      "distance_km": 173.638
+    },
+    {
+      "source": "st_0015",
+      "target": "st_0010",
+      "distance_km": 150.851
+    },
+    {
+      "source": "st_0015",
+      "target": "st_0011",
+      "distance_km": 123.201
+    },
+    {
+      "source": "st_0015",
+      "target": "st_0012",
+      "distance_km": 84.305
+    },
+    {
+      "source": "st_0015",
+      "target": "st_0013",
+      "distance_km": 60.331
+    },
+    {
+      "source": "st_0015",
+      "target": "st_0014",
+      "distance_km": 36.48
+    },
+    {
+      "source": "st_0015",
+      "target": "st_0016",
+      "distance_km": 28.384
+    },
+    {
+      "source": "st_0015",
+      "target": "st_0017",
+      "distance_km": 55.183
+    },
+    {
+      "source": "st_0015",
+      "target": "st_0018",
+      "distance_km": 88.309
+    },
+    {
+      "source": "st_0015",
+      "target": "st_0019",
+      "distance_km": 114.519
+    },
+    {
+      "source": "st_0015",
+      "target": "st_0020",
+      "distance_km": 139.465
+    },
+    {
+      "source": "st_0015",
+      "target": "st_0021",
+      "distance_km": 172.202
+    },
+    {
+      "source": "st_0015",
+      "target": "st_0022",
+      "distance_km": 203.987
+    },
+    {
+      "source": "st_0015",
+      "target": "st_0023",
+      "distance_km": 225.627
+    },
+    {
+      "source": "st_0015",
+      "target": "st_0024",
+      "distance_km": 257.963
+    },
+    {
+      "source": "st_0015",
+      "target": "dst_bkk_to_cnx",
+      "distance_km": 290.71
+    },
+    {
+      "source": "st_0016",
+      "target": "st_0003",
+      "distance_km": 378.143
+    },
+    {
+      "source": "st_0016",
+      "target": "st_0004",
+      "distance_km": 356.742
+    },
+    {
+      "source": "st_0016",
+      "target": "st_0005",
+      "distance_km": 314.691
+    },
+    {
+      "source": "st_0016",
+      "target": "st_0006",
+      "distance_km": 294.77
+    },
+    {
+      "source": "st_0016",
+      "target": "st_0007",
+      "distance_km": 262.553
+    },
+    {
+      "source": "st_0016",
+      "target": "st_0008",
+      "distance_km": 227.759
+    },
+    {
+      "source": "st_0016",
+      "target": "st_0009",
+      "distance_km": 202.001
+    },
+    {
+      "source": "st_0016",
+      "target": "st_0010",
+      "distance_km": 179.233
+    },
+    {
+      "source": "st_0016",
+      "target": "st_0011",
+      "distance_km": 151.585
+    },
+    {
+      "source": "st_0016",
+      "target": "st_0012",
+      "distance_km": 112.649
+    },
+    {
+      "source": "st_0016",
+      "target": "st_0013",
+      "distance_km": 88.499
+    },
+    {
+      "source": "st_0016",
+      "target": "st_0014",
+      "distance_km": 64.626
+    },
+    {
+      "source": "st_0016",
+      "target": "st_0015",
+      "distance_km": 28.384
+    },
+    {
+      "source": "st_0016",
+      "target": "st_0017",
+      "distance_km": 28.789
+    },
+    {
+      "source": "st_0016",
+      "target": "st_0018",
+      "distance_km": 60.031
+    },
+    {
+      "source": "st_0016",
+      "target": "st_0019",
+      "distance_km": 86.295
+    },
+    {
+      "source": "st_0016",
+      "target": "st_0020",
+      "distance_km": 111.119
+    },
+    {
+      "source": "st_0016",
+      "target": "st_0021",
+      "distance_km": 143.934
+    },
+    {
+      "source": "st_0016",
+      "target": "st_0022",
+      "distance_km": 175.656
+    },
+    {
+      "source": "st_0016",
+      "target": "st_0023",
+      "distance_km": 197.279
+    },
+    {
+      "source": "st_0016",
+      "target": "st_0024",
+      "distance_km": 229.671
+    },
+    {
+      "source": "st_0016",
+      "target": "dst_bkk_to_cnx",
+      "distance_km": 262.373
+    },
+    {
+      "source": "st_0017",
+      "target": "st_0004",
+      "distance_km": 382.255
+    },
+    {
+      "source": "st_0017",
+      "target": "st_0005",
+      "distance_km": 340.133
+    },
+    {
+      "source": "st_0017",
+      "target": "st_0006",
+      "distance_km": 320.076
+    },
+    {
+      "source": "st_0017",
+      "target": "st_0007",
+      "distance_km": 287.675
+    },
+    {
+      "source": "st_0017",
+      "target": "st_0008",
+      "distance_km": 253.123
+    },
+    {
+      "source": "st_0017",
+      "target": "st_0009",
+      "distance_km": 227.761
+    },
+    {
+      "source": "st_0017",
+      "target": "st_0010",
+      "distance_km": 204.477
+    },
+    {
+      "source": "st_0017",
+      "target": "st_0011",
+      "distance_km": 176.994
+    },
+    {
+      "source": "st_0017",
+      "target": "st_0012",
+      "distance_km": 137.7
+    },
+    {
+      "source": "st_0017",
+      "target": "st_0013",
+      "distance_km": 113.026
+    },
+    {
+      "source": "st_0017",
+      "target": "st_0014",
+      "distance_km": 89.553
+    },
+    {
+      "source": "st_0017",
+      "target": "st_0015",
+      "distance_km": 55.183
+    },
+    {
+      "source": "st_0017",
+      "target": "st_0016",
+      "distance_km": 28.789
+    },
+    {
+      "source": "st_0017",
+      "target": "st_0018",
+      "distance_km": 35.818
+    },
+    {
+      "source": "st_0017",
+      "target": "st_0019",
+      "distance_km": 60.931
+    },
+    {
+      "source": "st_0017",
+      "target": "st_0020",
+      "distance_km": 86.458
+    },
+    {
+      "source": "st_0017",
+      "target": "st_0021",
+      "distance_km": 118.384
+    },
+    {
+      "source": "st_0017",
+      "target": "st_0022",
+      "distance_km": 150.45
+    },
+    {
+      "source": "st_0017",
+      "target": "st_0023",
+      "distance_km": 172.184
+    },
+    {
+      "source": "st_0017",
+      "target": "st_0024",
+      "distance_km": 204.05
+    },
+    {
+      "source": "st_0017",
+      "target": "dst_bkk_to_cnx",
+      "distance_km": 237.043
+    },
+    {
+      "source": "st_0018",
+      "target": "st_0005",
+      "distance_km": 374.547
+    },
+    {
+      "source": "st_0018",
+      "target": "st_0006",
+      "distance_km": 354.575
+    },
+    {
+      "source": "st_0018",
+      "target": "st_0007",
+      "distance_km": 322.278
+    },
+    {
+      "source": "st_0018",
+      "target": "st_0008",
+      "distance_km": 287.565
+    },
+    {
+      "source": "st_0018",
+      "target": "st_0009",
+      "distance_km": 261.921
+    },
+    {
+      "source": "st_0018",
+      "target": "st_0010",
+      "distance_km": 238.971
+    },
+    {
+      "source": "st_0018",
+      "target": "st_0011",
+      "distance_km": 211.366
+    },
+    {
+      "source": "st_0018",
+      "target": "st_0012",
+      "distance_km": 172.236
+    },
+    {
+      "source": "st_0018",
+      "target": "st_0013",
+      "distance_km": 147.767
+    },
+    {
+      "source": "st_0018",
+      "target": "st_0014",
+      "distance_km": 124.023
+    },
+    {
+      "source": "st_0018",
+      "target": "st_0015",
+      "distance_km": 88.309
+    },
+    {
+      "source": "st_0018",
+      "target": "st_0016",
+      "distance_km": 60.031
+    },
+    {
+      "source": "st_0018",
+      "target": "st_0017",
+      "distance_km": 35.818
+    },
+    {
+      "source": "st_0018",
+      "target": "st_0019",
+      "distance_km": 26.295
+    },
+    {
+      "source": "st_0018",
+      "target": "st_0020",
+      "distance_km": 51.229
+    },
+    {
+      "source": "st_0018",
+      "target": "st_0021",
+      "distance_km": 83.905
+    },
+    {
+      "source": "st_0018",
+      "target": "st_0022",
+      "distance_km": 115.693
+    },
+    {
+      "source": "st_0018",
+      "target": "st_0023",
+      "distance_km": 137.359
+    },
+    {
+      "source": "st_0018",
+      "target": "st_0024",
+      "distance_km": 169.655
+    },
+    {
+      "source": "st_0018",
+      "target": "dst_bkk_to_cnx",
+      "distance_km": 202.417
+    },
+    {
+      "source": "st_0019",
+      "target": "st_0006",
+      "distance_km": 380.639
+    },
+    {
+      "source": "st_0019",
+      "target": "st_0007",
+      "distance_km": 348.303
+    },
+    {
+      "source": "st_0019",
+      "target": "st_0008",
+      "distance_km": 313.64
+    },
+    {
+      "source": "st_0019",
+      "target": "st_0009",
+      "distance_km": 288.068
+    },
+    {
+      "source": "st_0019",
+      "target": "st_0010",
+      "distance_km": 265.021
+    },
+    {
+      "source": "st_0019",
+      "target": "st_0011",
+      "distance_km": 237.447
+    },
+    {
+      "source": "st_0019",
+      "target": "st_0012",
+      "distance_km": 198.253
+    },
+    {
+      "source": "st_0019",
+      "target": "st_0013",
+      "distance_km": 173.696
+    },
+    {
+      "source": "st_0019",
+      "target": "st_0014",
+      "distance_km": 150.03
+    },
+    {
+      "source": "st_0019",
+      "target": "st_0015",
+      "distance_km": 114.519
+    },
+    {
+      "source": "st_0019",
+      "target": "st_0016",
+      "distance_km": 86.295
+    },
+    {
+      "source": "st_0019",
+      "target": "st_0017",
+      "distance_km": 60.931
+    },
+    {
+      "source": "st_0019",
+      "target": "st_0018",
+      "distance_km": 26.295
+    },
+    {
+      "source": "st_0019",
+      "target": "st_0020",
+      "distance_km": 25.606
+    },
+    {
+      "source": "st_0019",
+      "target": "st_0021",
+      "distance_km": 57.7
+    },
+    {
+      "source": "st_0019",
+      "target": "st_0022",
+      "distance_km": 89.629
+    },
+    {
+      "source": "st_0019",
+      "target": "st_0023",
+      "distance_km": 111.342
+    },
+    {
+      "source": "st_0019",
+      "target": "st_0024",
+      "distance_km": 143.472
+    },
+    {
+      "source": "st_0019",
+      "target": "dst_bkk_to_cnx",
+      "distance_km": 176.322
+    },
+    {
+      "source": "st_0020",
+      "target": "st_0007",
+      "distance_km": 373.505
+    },
+    {
+      "source": "st_0020",
+      "target": "st_0008",
+      "distance_km": 338.781
+    },
+    {
+      "source": "st_0020",
+      "target": "st_0009",
+      "distance_km": 313.102
+    },
+    {
+      "source": "st_0020",
+      "target": "st_0010",
+      "distance_km": 290.195
+    },
+    {
+      "source": "st_0020",
+      "target": "st_0011",
+      "distance_km": 262.584
+    },
+    {
+      "source": "st_0020",
+      "target": "st_0012",
+      "distance_km": 223.465
+    },
+    {
+      "source": "st_0020",
+      "target": "st_0013",
+      "distance_km": 198.987
+    },
+    {
+      "source": "st_0020",
+      "target": "st_0014",
+      "distance_km": 175.251
+    },
+    {
+      "source": "st_0020",
+      "target": "st_0015",
+      "distance_km": 139.465
+    },
+    {
+      "source": "st_0020",
+      "target": "st_0016",
+      "distance_km": 111.119
+    },
+    {
+      "source": "st_0020",
+      "target": "st_0017",
+      "distance_km": 86.458
+    },
+    {
+      "source": "st_0020",
+      "target": "st_0018",
+      "distance_km": 51.229
+    },
+    {
+      "source": "st_0020",
+      "target": "st_0019",
+      "distance_km": 25.606
+    },
+    {
+      "source": "st_0020",
+      "target": "st_0021",
+      "distance_km": 33.211
+    },
+    {
+      "source": "st_0020",
+      "target": "st_0022",
+      "distance_km": 64.547
+    },
+    {
+      "source": "st_0020",
+      "target": "st_0023",
+      "distance_km": 86.162
+    },
+    {
+      "source": "st_0020",
+      "target": "st_0024",
+      "distance_km": 118.629
+    },
+    {
+      "source": "st_0020",
+      "target": "dst_bkk_to_cnx",
+      "distance_km": 151.255
+    },
+    {
+      "source": "st_0021",
+      "target": "st_0008",
+      "distance_km": 371.325
+    },
+    {
+      "source": "st_0021",
+      "target": "st_0009",
+      "distance_km": 345.767
+    },
+    {
+      "source": "st_0021",
+      "target": "st_0010",
+      "distance_km": 322.699
+    },
+    {
+      "source": "st_0021",
+      "target": "st_0011",
+      "distance_km": 295.137
+    },
+    {
+      "source": "st_0021",
+      "target": "st_0012",
+      "distance_km": 255.923
+    },
+    {
+      "source": "st_0021",
+      "target": "st_0013",
+      "distance_km": 231.331
+    },
+    {
+      "source": "st_0021",
+      "target": "st_0014",
+      "distance_km": 207.705
+    },
+    {
+      "source": "st_0021",
+      "target": "st_0015",
+      "distance_km": 172.202
+    },
+    {
+      "source": "st_0021",
+      "target": "st_0016",
+      "distance_km": 143.934
+    },
+    {
+      "source": "st_0021",
+      "target": "st_0017",
+      "distance_km": 118.384
+    },
+    {
+      "source": "st_0021",
+      "target": "st_0018",
+      "distance_km": 83.905
+    },
+    {
+      "source": "st_0021",
+      "target": "st_0019",
+      "distance_km": 57.7
+    },
+    {
+      "source": "st_0021",
+      "target": "st_0020",
+      "distance_km": 33.211
+    },
+    {
+      "source": "st_0021",
+      "target": "st_0022",
+      "distance_km": 32.141
+    },
+    {
+      "source": "st_0021",
+      "target": "st_0023",
+      "distance_km": 53.873
+    },
+    {
+      "source": "st_0021",
+      "target": "st_0024",
+      "distance_km": 85.772
+    },
+    {
+      "source": "st_0021",
+      "target": "dst_bkk_to_cnx",
+      "distance_km": 118.668
+    },
+    {
+      "source": "st_0022",
+      "target": "st_0009",
+      "distance_km": 377.613
+    },
+    {
+      "source": "st_0022",
+      "target": "st_0010",
+      "distance_km": 354.635
+    },
+    {
+      "source": "st_0022",
+      "target": "st_0011",
+      "distance_km": 327.046
+    },
+    {
+      "source": "st_0022",
+      "target": "st_0012",
+      "distance_km": 287.875
+    },
+    {
+      "source": "st_0022",
+      "target": "st_0013",
+      "distance_km": 263.324
+    },
+    {
+      "source": "st_0022",
+      "target": "st_0014",
+      "distance_km": 239.652
+    },
+    {
+      "source": "st_0022",
+      "target": "st_0015",
+      "distance_km": 203.987
+    },
+    {
+      "source": "st_0022",
+      "target": "st_0016",
+      "distance_km": 175.656
+    },
+    {
+      "source": "st_0022",
+      "target": "st_0017",
+      "distance_km": 150.45
+    },
+    {
+      "source": "st_0022",
+      "target": "st_0018",
+      "distance_km": 115.693
+    },
+    {
+      "source": "st_0022",
+      "target": "st_0019",
+      "distance_km": 89.629
+    },
+    {
+      "source": "st_0022",
+      "target": "st_0020",
+      "distance_km": 64.547
+    },
+    {
+      "source": "st_0022",
+      "target": "st_0021",
+      "distance_km": 32.141
+    },
+    {
+      "source": "st_0022",
+      "target": "st_0023",
+      "distance_km": 21.74
+    },
+    {
+      "source": "st_0022",
+      "target": "st_0024",
+      "distance_km": 54.148
+    },
+    {
+      "source": "st_0022",
+      "target": "dst_bkk_to_cnx",
+      "distance_km": 86.725
+    },
+    {
+      "source": "st_0023",
+      "target": "st_0009",
+      "distance_km": 399.263
+    },
+    {
+      "source": "st_0023",
+      "target": "st_0010",
+      "distance_km": 376.322
+    },
+    {
+      "source": "st_0023",
+      "target": "st_0011",
+      "distance_km": 348.724
+    },
+    {
+      "source": "st_0023",
+      "target": "st_0012",
+      "distance_km": 309.57
+    },
+    {
+      "source": "st_0023",
+      "target": "st_0013",
+      "distance_km": 285.036
+    },
+    {
+      "source": "st_0023",
+      "target": "st_0014",
+      "distance_km": 261.348
+    },
+    {
+      "source": "st_0023",
+      "target": "st_0015",
+      "distance_km": 225.627
+    },
+    {
+      "source": "st_0023",
+      "target": "st_0016",
+      "distance_km": 197.279
+    },
+    {
+      "source": "st_0023",
+      "target": "st_0017",
+      "distance_km": 172.184
+    },
+    {
+      "source": "st_0023",
+      "target": "st_0018",
+      "distance_km": 137.359
+    },
+    {
+      "source": "st_0023",
+      "target": "st_0019",
+      "distance_km": 111.342
+    },
+    {
+      "source": "st_0023",
+      "target": "st_0020",
+      "distance_km": 86.162
+    },
+    {
+      "source": "st_0023",
+      "target": "st_0021",
+      "distance_km": 53.873
+    },
+    {
+      "source": "st_0023",
+      "target": "st_0022",
+      "distance_km": 21.74
+    },
+    {
+      "source": "st_0023",
+      "target": "st_0024",
+      "distance_km": 33.058
+    },
+    {
+      "source": "st_0023",
+      "target": "dst_bkk_to_cnx",
+      "distance_km": 65.112
+    },
+    {
+      "source": "st_0024",
+      "target": "st_0011",
+      "distance_km": 380.9
+    },
+    {
+      "source": "st_0024",
+      "target": "st_0012",
+      "distance_km": 341.671
+    },
+    {
+      "source": "st_0024",
+      "target": "st_0013",
+      "distance_km": 317.054
+    },
+    {
+      "source": "st_0024",
+      "target": "st_0014",
+      "distance_km": 293.459
+    },
+    {
+      "source": "st_0024",
+      "target": "st_0015",
+      "distance_km": 257.963
+    },
+    {
+      "source": "st_0024",
+      "target": "st_0016",
+      "distance_km": 229.671
+    },
+    {
+      "source": "st_0024",
+      "target": "st_0017",
+      "distance_km": 204.05
+    },
+    {
+      "source": "st_0024",
+      "target": "st_0018",
+      "distance_km": 169.655
+    },
+    {
+      "source": "st_0024",
+      "target": "st_0019",
+      "distance_km": 143.472
+    },
+    {
+      "source": "st_0024",
+      "target": "st_0020",
+      "distance_km": 118.629
+    },
+    {
+      "source": "st_0024",
+      "target": "st_0021",
+      "distance_km": 85.772
+    },
+    {
+      "source": "st_0024",
+      "target": "st_0022",
+      "distance_km": 54.148
+    },
+    {
+      "source": "st_0024",
+      "target": "st_0023",
+      "distance_km": 33.058
+    },
+    {
+      "source": "st_0024",
+      "target": "dst_bkk_to_cnx",
+      "distance_km": 33.244
+    },
+    {
+      "source": "dst_bkk_to_cnx",
+      "target": "st_0012",
+      "distance_km": 374.574
+    },
+    {
+      "source": "dst_bkk_to_cnx",
+      "target": "st_0013",
+      "distance_km": 349.997
+    },
+    {
+      "source": "dst_bkk_to_cnx",
+      "target": "st_0014",
+      "distance_km": 326.352
+    },
+    {
+      "source": "dst_bkk_to_cnx",
+      "target": "st_0015",
+      "distance_km": 290.71
+    },
+    {
+      "source": "dst_bkk_to_cnx",
+      "target": "st_0016",
+      "distance_km": 262.373
+    },
+    {
+      "source": "dst_bkk_to_cnx",
+      "target": "st_0017",
+      "distance_km": 237.043
+    },
+    {
+      "source": "dst_bkk_to_cnx",
+      "target": "st_0018",
+      "distance_km": 202.417
+    },
+    {
+      "source": "dst_bkk_to_cnx",
+      "target": "st_0019",
+      "distance_km": 176.322
+    },
+    {
+      "source": "dst_bkk_to_cnx",
+      "target": "st_0020",
+      "distance_km": 151.255
+    },
+    {
+      "source": "dst_bkk_to_cnx",
+      "target": "st_0021",
+      "distance_km": 118.668
+    },
+    {
+      "source": "dst_bkk_to_cnx",
+      "target": "st_0022",
+      "distance_km": 86.725
+    },
+    {
+      "source": "dst_bkk_to_cnx",
+      "target": "st_0023",
+      "distance_km": 65.112
+    },
+    {
+      "source": "dst_bkk_to_cnx",
+      "target": "st_0024",
+      "distance_km": 33.244
+    }
+  ],
+  "notes": [
+    "DISTANCE FALLBACK used; stations are synthesised along corridor midline with jitter.",
+    "Road distances = haversine * 1.3 road-factor.",
+    "522 feasible edges under 400 km full-tank range."
+  ],
+  "generated_at": "2026-04-17T16:44:18"
+}

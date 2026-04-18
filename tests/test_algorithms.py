@@ -1,13 +1,16 @@
 from __future__ import annotations
 
 from math import isclose
+from pathlib import Path
 
 from ada_route_opt.algorithms import (
     dynamic_programming,
+    full_tank_only_dijkstra,
     partial_fill_astar,
     refuel_astar,
     state_expanded_dijkstra,
 )
+from ada_route_opt.real_instances import load_real_instance
 from ada_route_opt.synthetic import make_running_example
 
 
@@ -37,3 +40,35 @@ def test_rf_and_pf_match_dijkstra_on_running_example() -> None:
     assert isclose(rf.cost, dijkstra.cost)
     assert isclose(pf.cost, dijkstra.cost)
 
+
+def test_real_instance_loader_and_algorithms() -> None:
+    instance = load_real_instance(Path("data/real_routes/example_minimal.json"))
+    dijkstra = state_expanded_dijkstra(
+        instance.graph,
+        instance.source,
+        instance.target,
+        instance.tank_liters,
+        instance.initial_fuel_liters,
+        instance.efficiency_km_per_liter,
+    )
+    pf = partial_fill_astar(
+        instance.graph,
+        instance.source,
+        instance.target,
+        instance.tank_liters,
+        instance.initial_fuel_liters,
+        instance.efficiency_km_per_liter,
+    )
+    full_tank = full_tank_only_dijkstra(
+        instance.graph,
+        instance.source,
+        instance.target,
+        instance.tank_liters,
+        instance.initial_fuel_liters,
+        instance.efficiency_km_per_liter,
+    )
+    assert instance.instance_id == "example_minimal"
+    assert dijkstra.feasible
+    assert pf.feasible
+    assert full_tank.feasible
+    assert isclose(pf.cost, dijkstra.cost)

@@ -1,0 +1,25 @@
+\chapter{Conclusion}
+\label{ch:conclusion}
+
+This project formulates fuel-aware route optimization on Thailand road networks as a shortest
+path problem with explicit refueling decisions, implements six algorithmic strategies, and
+provides formal correctness arguments for the proposed Partial-Fill A* heuristic.
+The current synthetic evidence already shows that PF-A* is a strong practical method: it
+matches the best observed costs returned by the exact baselines in the tested settings while
+substantially reducing runtime and node expansions.
+The experiments also confirm that the variable-purchase model offers meaningful cost savings
+over full-tank-only routing.
+
+Just as importantly, the repository now supports an end-to-end research workflow rather than
+an isolated algorithm prototype.
+It includes synthetic benchmark generation, automated result analysis, a real-route data
+collection pipeline, and a dedicated Experiment~6 execution path for Thai corridors.
+That makes the project reproducible and gives the final dissertation a clear empirical
+foundation.
+
+The remaining work is sharply defined.
+Before the report is archived as a fully complete dissertation, the Standard A* and RF-A*
+cost discrepancy should be audited, the strict-profile synthetic rerun should be executed, and
+the real Thai route results should be inserted into Chapter~\ref{ch:results}.
+Because the document structure in \texttt{ADA\_Final\_Report} already anticipates those
+updates, the last stage is now an integration task rather than a rewrite.

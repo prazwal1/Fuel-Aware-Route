@@ -1,0 +1,66 @@
+{
+  "_comment": "Corridor config for Experiment 6. Endpoints are pinned by (lat, lon) to keep the instance reproducible across OSMnx snapshots. Do NOT change these once the final benchmark starts.",
+  "defaults": {
+    "vehicle": {
+      "tank_capacity_l": 40.0,
+      "initial_fuel_l": 28.0,
+      "efficiency_km_per_l": 10.0
+    },
+    "fallback_price_thb_per_l": 36.0,
+    "search_radius_m": 3000,
+    "max_corridor_width_km": 40.0
+  },
+  "corridors": [
+    {
+      "id": "bkk_to_cnx",
+      "label": "Bangkok to Chiang Mai",
+      "source": {
+        "name": "Bangkok",
+        "lat": 13.7563,
+        "lon": 100.5018,
+        "province": "Bangkok"
+      },
+      "target": {
+        "name": "Chiang Mai",
+        "lat": 18.7883,
+        "lon": 98.9853,
+        "province": "Chiang Mai"
+      },
+      "approx_distance_km": 700
+    },
+    {
+      "id": "bkk_to_hkt",
+      "label": "Bangkok to Phuket",
+      "source": {
+        "name": "Bangkok",
+        "lat": 13.7563,
+        "lon": 100.5018,
+        "province": "Bangkok"
+      },
+      "target": {
+        "name": "Phuket",
+        "lat": 7.8804,
+        "lon": 98.3923,
+        "province": "Phuket"
+      },
+      "approx_distance_km": 900
+    },
+    {
+      "id": "bkk_to_kkc",
+      "label": "Bangkok to Khon Kaen",
+      "source": {
+        "name": "Bangkok",
+        "lat": 13.7563,
+        "lon": 100.5018,
+        "province": "Bangkok"
+      },
+      "target": {
+        "name": "Khon Kaen",
+        "lat": 16.4419,
+        "lon": 102.8360,
+        "province": "Khon Kaen"
+      },
+      "approx_distance_km": 450
+    }
+  ]
+}

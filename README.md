@@ -77,6 +77,30 @@ Generate charts and report-ready tables from a completed CSV:
 uv run python scripts/analyze_synthetic_results.py --input results/synthetic_results.csv --output-dir results/report_assets
 ```
 
+Run the minimal Experiment 6 real-route pipeline:
+
+```powershell
+.\scripts\run_windows_real_experiments.ps1 -InstancesDir data/real_routes -Runs 10 -Warmups 0 -Output results_real -PurchaseModel both
+```
+
+This writes:
+
+```text
+results_real/real_route_results.csv
+```
+
+The required real-route JSON input format is documented in:
+
+```text
+data/real_routes/README.md
+```
+
+Collect real-route OSM road and fuel-station data first:
+
+```powershell
+.\scripts\run_windows_collect_real_route_data.ps1 -Config data/real_routes/corridors.example.json -OutputDir data/real_routes/generated -RawDir data/real_routes/raw
+```
+
 Time-saving 100-run synthetic sweep:
 
 ```powershell

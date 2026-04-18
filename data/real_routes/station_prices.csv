@@ -1,0 +1,19 @@
+osm_id,price_thb_per_l,notes
+# Per-station curated price file. Format:
+#   osm_id              = the OSM element identifier exactly as written by the
+#                         collector (e.g. "node/1234567890" or "way/9876543").
+#                         Look in data/real_routes/raw/<corridor>_stations.csv
+#                         after a collection run to see the available osm_ids.
+#   price_thb_per_l     = posted pump price for the chosen fuel grade (Gasohol 91)
+#                         in Thai baht per litre.
+#   notes               = free-form; not consumed by the pipeline.
+#
+# Any station id NOT listed here will fall back to the provincial average
+# table in collect_real_route_data.py (PROVINCIAL_PRICE_TABLE_THB_PER_L),
+# and any station whose province cannot be resolved will fall back to
+# `defaults.fallback_price_thb_per_l` in corridors.json.
+#
+# Example rows (remove these and replace with real data before the final run):
+# node/123456789,43.58,PTT Victory Monument
+# node/987654321,44.12,Bangchak Nakhon Sawan bypass
+# way/555555555,44.88,Caltex Lampang km-12

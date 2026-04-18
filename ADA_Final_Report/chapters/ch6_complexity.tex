@@ -1,0 +1,56 @@
+\chapter{Complexity Analysis}
+\label{ch:complexity}
+
+All complexity figures are stated for the variable-purchase model on the state-expanded graph
+$G^{*} = (S, E^{*})$.
+Let $V = |V|$, $E = |E|$, $F = C/\varepsilon$ (discretized fuel levels),
+$\Delta = $ max node degree.
+
+\section{State-Space Derivation}
+
+$|S| = O(VF)$ states.
+Per state $(v,f)$: $O(\Delta)$ travel relaxations $+$ $O(F)$ refuel relaxations.
+Total relaxations: $O(EF + VF^{2})$.
+Each relaxation involves one heap operation at $O(\log(VF))$.
+This gives the common worst-case bound for all four search-based algorithms.
+
+\begin{table}[ht]
+\centering
+\caption{Algorithm complexity summary.}
+\label{tab:complexity}
+\small
+\begin{tabular}{lllcc}
+\toprule
+Algorithm & Time & Space & Optimal? & Variable purchase? \\
+\midrule
+Dijkstra (no fuel state)       & $O(E\log V)$                   & $O(V{+}E)$ & No  & No \\
+Dijkstra (state-expanded, B1)  & $O((EF{+}VF^{2})\log(VF))$    & $O(VF)$    & Yes & Yes \\
+Greedy (B2)                    & $O(V^{2})$                      & $O(V)$     & No  & Yes \\
+DP na\"{\i}ve (B3)             & $O(V{\cdot}F^{2}{\cdot}\Delta)$ & $O(VF)$    & Yes & Yes \\
+DP optimised (B3)              & $O(EF)$                         & $O(VF)$    & Yes & Yes \\
+A* state-expanded (B4)         & $O((EF{+}VF^{2})\log(VF))$    & $O(VF)$    & Yes & Yes \\
+RF-A* (B5)                     & $O((EF{+}VF^{2})\log(VF))$    & $O(VF)$    & Yes & Yes \\
+PF-A* (proposed)               & $O((EF{+}VF^{2})\log(VF))$    & $O(VF)$    & Yes & Yes \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Why PF-A* Does Not Improve Worst-Case Complexity}
+
+PF-A*'s heuristic $h_{\mathrm{PF}}(v,f)$ is point-wise tighter than $h_{\mathrm{RF}}(v)$,
+which means it prunes more states.
+However, in the worst case (e.g.\ uniform prices, $p_{\min}^{\mathrm{reach}} = p_{\min}$
+everywhere), the two heuristics coincide and PF-A* degenerates to RF-A*.
+The worst-case bound is therefore identical.
+
+The improvement is empirical: on networks with high price variance and dense station
+coverage---as expected on real Thai routes---$p_{\min}^{\mathrm{reach}}(v,f) \gg p_{\min}$
+frequently, causing PF-A* to assign much lower priority to states that RF-A* would expand
+unnecessarily.
+This is quantified in the experiments of Chapter~\ref{ch:experiments}.
+
+\section{Thailand-Scale Estimate}
+
+With $V = 3{,}000$, $E = 15{,}000$, $F = C/\varepsilon = 40/1 = 40$:
+$|S| \approx 120{,}000$ states, $\approx 7.2$\,M expanded edges, $\approx 90$\,M operations---feasible
+in well under one second on modern hardware.

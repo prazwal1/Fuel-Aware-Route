@@ -1,0 +1,131 @@
+{
+  "_meta": {
+    "title": "Experiment 6 real corridor configuration",
+    "purpose": "Three real Thai corridors for fuel-aware route optimization evaluation.",
+    "project": "Fuel-Aware Route Optimization on Thailand Road Networks (Wai Yan Aung & Prajwal Bhandary, MSc CS, AIT)",
+    "price_snapshot": {
+      "fuel_grade": "Gasohol 91",
+      "source": "Thailand Energy Policy and Planning Office (EPPO) via PTT/Bangchak retail postings",
+      "reference_date": "2026-04-03",
+      "bangkok_base_price_thb_per_l": 43.58,
+      "notes": [
+        "Gasohol 91 chosen because it is the most common retail fuel for private vehicles and is the price series EPPO publishes daily with provincial variants.",
+        "Price snapshot is anchored to the April 3, 2026 PTT/Bangchak pump price for Bangkok. Provincial prices below approximate documented EPPO provincial dispersion (~1-3 THB/L spread, higher in far-north and far-south where transport costs are greater).",
+        "Do not mix results from this snapshot with a rerun under a different snapshot. If rerunning on a different date, regenerate this file."
+      ]
+    },
+    "vehicle_rationale": {
+      "tank_capacity_l": "40 L matches the plan's fixed parameter and a typical Thai compact sedan (e.g. Honda City, Toyota Yaris).",
+      "initial_fuel_l": "28 L = 0.7 * tank, the same 70% starting fraction used throughout the synthetic experiments.",
+      "efficiency_km_per_l": "10 km/L is a conservative mixed urban/highway figure for the vehicle class and matches Chapter 3 of the final report."
+    },
+    "corridor_rationale": [
+      "Bangkok -> Chiang Mai (~700 km) covers the country's busiest north-south corridor and follows Highway 1 (Phahonyothin) -> Highway 32 -> Highway 11.",
+      "Bangkok -> Phuket (~840 km) is the longest corridor, following Highway 4 (Phetkasem) south through Chumphon and Phang Nga. Tests the algorithm at the range upper bound.",
+      "Bangkok -> Khon Kaen (~450 km) is the medium-length northeastern corridor via Highway 1 -> Highway 2 (Mittraphap) at the Saraburi km-107 junction. Tests behaviour at a shorter corridor."
+    ],
+    "anchor_point_rationale": "Endpoints are pinned to documented highway start/end points (not abstract city centres) so OSMnx resolves them to stable road-graph nodes across reruns."
+  },
+
+  "defaults": {
+    "vehicle": {
+      "tank_capacity_l": 40.0,
+      "initial_fuel_l": 28.0,
+      "efficiency_km_per_l": 10.0
+    },
+    "fallback_price_thb_per_l": 43.58,
+    "search_radius_m": 3000,
+    "max_corridor_width_km": 40.0,
+    "_notes": "fallback_price equals the Bangkok base price from _meta.price_snapshot. Stations whose province cannot be resolved will use this value, which is documented as the source in the generated instance."
+  },
+
+  "corridors": [
+    {
+      "id": "bkk_to_cnx",
+      "label": "Bangkok to Chiang Mai",
+      "_route_description": "Highway 1 (Phahonyothin) north from Victory Monument; Highway 32 from Bang Pa-in; rejoin Highway 1 at Nakhon Sawan; Highway 11 from In Buri/Sing Buri junction through Lampang to Chiang Mai.",
+      "_documented_distance_km": 700,
+      "source": {
+        "name": "Victory Monument, Bangkok",
+        "description": "Historical starting point of Highway 1 (Phahonyothin Road) at the junction of Phaya Thai and Ratchathewi districts.",
+        "lat": 13.7650,
+        "lon": 100.5379,
+        "province": "Bangkok",
+        "osm_hint": "Victory Monument traffic circle"
+      },
+      "target": {
+        "name": "Chiang Mai (Highway 11 terminus)",
+        "description": "Eastern entry to Chiang Mai city where Highway 11 (Super Highway) terminates.",
+        "lat": 18.8000,
+        "lon": 99.0180,
+        "province": "Chiang Mai",
+        "osm_hint": "Highway 11 / Route 1141 junction, Nong Hoi"
+      },
+      "approx_distance_km": 700,
+      "primary_highways": ["AH2", "1", "32", "11"],
+      "intermediate_provinces": [
+        "Pathum Thani", "Phra Nakhon Si Ayutthaya", "Saraburi", "Lopburi",
+        "Singburi", "Chainat", "Nakhon Sawan", "Kamphaeng Phet", "Tak",
+        "Lampang", "Lamphun"
+      ]
+    },
+
+    {
+      "id": "bkk_to_hkt",
+      "label": "Bangkok to Phuket",
+      "_route_description": "Highway 35 (Rama II) south from Bangkok; Highway 4 (Phetkasem) through Ratchaburi, Phetchaburi, Prachuap Khiri Khan, Chumphon, Ranong, Phang Nga; Sarasin Bridge to Phuket Island.",
+      "_documented_distance_km": 840,
+      "source": {
+        "name": "Bang Khae / Phetkasem entry, Bangkok",
+        "description": "Southern anchor of Highway 4 (Phetkasem Road) at Bang Khae district where Phetkasem begins its southbound run out of the Bangkok metropolitan area.",
+        "lat": 13.7070,
+        "lon": 100.4093,
+        "province": "Bangkok",
+        "osm_hint": "Bang Khae Intersection, Phetkasem Road"
+      },
+      "target": {
+        "name": "Phuket Town",
+        "description": "Phuket town centre, terminus of Highway 4 after Sarasin Bridge crossing onto Phuket Island.",
+        "lat": 7.8804,
+        "lon": 98.3923,
+        "province": "Phuket",
+        "osm_hint": "Highway 402 / Phuket Town"
+      },
+      "approx_distance_km": 840,
+      "primary_highways": ["AH2", "35", "4", "402"],
+      "intermediate_provinces": [
+        "Samut Sakhon", "Samut Songkhram", "Ratchaburi", "Phetchaburi",
+        "Prachuap Khiri Khan", "Chumphon", "Ranong", "Phang Nga"
+      ]
+    },
+
+    {
+      "id": "bkk_to_kkc",
+      "label": "Bangkok to Khon Kaen",
+      "_route_description": "Highway 1 (Phahonyothin) north from Victory Monument to the Saraburi interchange at km 107; turn onto Highway 2 (Mittraphap) through Nakhon Ratchasima to Khon Kaen. Route documented by the Tourism Authority of Thailand and Highway 2 Wikipedia entry.",
+      "_documented_distance_km": 449,
+      "source": {
+        "name": "Victory Monument, Bangkok",
+        "description": "Same Highway 1 anchor as the Chiang Mai corridor for consistency.",
+        "lat": 13.7650,
+        "lon": 100.5379,
+        "province": "Bangkok",
+        "osm_hint": "Victory Monument traffic circle"
+      },
+      "target": {
+        "name": "Khon Kaen (Mittraphap Road)",
+        "description": "Khon Kaen city centre on Highway 2 (Mittraphap Road).",
+        "lat": 16.4322,
+        "lon": 102.8236,
+        "province": "Khon Kaen",
+        "osm_hint": "Mittraphap Road at Khon Kaen city"
+      },
+      "approx_distance_km": 449,
+      "primary_highways": ["AH2", "AH12", "1", "2"],
+      "intermediate_provinces": [
+        "Pathum Thani", "Phra Nakhon Si Ayutthaya", "Saraburi",
+        "Nakhon Ratchasima"
+      ]
+    }
+  ]
+}

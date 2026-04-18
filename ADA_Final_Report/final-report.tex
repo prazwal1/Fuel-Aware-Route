@@ -1,0 +1,193 @@
+\documentclass[12pt, a4paper, oneside]{report}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[a4paper, margin=2.5cm]{geometry}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{tabularx}
+\usepackage{microtype}
+\usepackage[style=numeric, sorting=nyt, backend=biber]{biblatex}
+\addbibresource{references.bib}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc}
+
+\definecolor{srcfill}{RGB}{222,236,214}
+\definecolor{stationfill}{RGB}{234,238,242}
+\definecolor{destfill}{RGB}{244,224,224}
+\definecolor{optpath}{RGB}{58,122,72}
+\definecolor{subpath}{RGB}{198,140,47}
+\definecolor{badpath}{RGB}{178,92,92}
+\definecolor{muted}{RGB}{150,155,160}
+
+\tikzset{
+  fuelnode/.style={
+    circle,
+    draw=black!50,
+    line width=0.9pt,
+    minimum size=12mm,
+    inner sep=0pt,
+    font=\small,
+    fill=stationfill
+  },
+  srcnode/.style={fuelnode, fill=srcfill},
+  destnode/.style={fuelnode, fill=destfill},
+  edgebase/.style={-Latex, line width=0.95pt, draw=black!60},
+  edgefaint/.style={-Latex, line width=0.85pt, dashed, draw=black!28},
+  edgeopt/.style={-Latex, line width=1.35pt, draw=optpath},
+  edgesub/.style={-Latex, line width=1.35pt, draw=subpath},
+  edgebad/.style={-Latex, line width=1.05pt, dashed, draw=badpath},
+  pricelabel/.style={font=\scriptsize, align=center, text=black!82},
+  distlabel/.style={font=\scriptsize, fill=white, inner sep=1pt, text=black!72},
+  note/.style={font=\scriptsize, align=center, text=black!74},
+  summary/.style={font=\footnotesize, align=center, text=black!78}
+}
+
+\newcommand{\FuelGraphBase}{
+  \node[srcnode]  (A) at (0,0) {A};
+  \node[fuelnode] (B) at (3.2,0) {B};
+  \node[fuelnode] (C) at (6.6,0) {C};
+  \node[destnode] (T) at (10.1,0) {T};
+  \node[fuelnode] (E) at (5.8,-2.2) {E};
+  \node[fuelnode] (D) at (9.2,-2.0) {D};
+
+  \draw[edgebase]  (A) -- node[distlabel, above] {100 km} (B);
+  \draw[edgefaint] (B) -- node[distlabel, above] {150 km} (C);
+  \draw[edgefaint] (C) -- node[distlabel, above] {150 km} (T);
+  \draw[edgebase]  (B) -- node[distlabel, sloped, above] {80 km} (E);
+  \draw[edgebase]  (E) -- node[distlabel, above] {80 km} (D);
+  \draw[edgebase]  (D) -- node[distlabel, right] {110 km} (T);
+}
+
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+  {\centering\normalfont\bfseries}
+  {\fontsize{20pt}{22pt}\selectfont \MakeUppercase{\chaptername}\ \thechapter}
+  {8pt}
+  {\fontsize{18pt}{22pt}\selectfont \MakeUppercase}
+
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\onehalfspacing
+
+\hypersetup{
+    colorlinks = true,
+    linkcolor  = black!60!black,
+    citecolor  = green!50!black,
+    urlcolor   = cyan!70!black,
+    pdftitle   = {Fuel-Aware Route Optimization on Thailand Road Networks -- Final Report},
+    pdfauthor  = {Wai Yan Aung and Prajwal Bhandary},
+}
+
+\begin{document}
+
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    {\Large\bfseries FUEL-AWARE ROUTE OPTIMIZATION ON THAILAND ROAD NETWORKS\\[0.5em]
+    \large Final Report\par}
+    \vspace{2cm}
+    {\large by\\[0.5em]
+    \textbf{Wai Yan Aung \& Prajwal Bhandary}\par}
+    \vspace{1.5cm}
+    {\normalsize
+    A Final Report Submitted in Partial Fulfillment of the Requirements\\
+    for the Degree of Master of Science in Computer Science\\[1em]
+    Nationality: Myanmar, Nepal\\
+    Previous Degree: Bachelor of Computing\\[1em]
+    Asian Institute of Technology\\
+    School of Engineering and Technology\\
+    Thailand\\[1em]
+    August 2027\par}
+    \vfill
+\end{titlepage}
+\hypersetup{pageanchor=true}
+
+\pagenumbering{roman}
+\begin{abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+\thispagestyle{plain}
+
+Efficient route planning on long-distance road networks should minimize not only travel
+distance or time but also the total cost of fuel purchased along the trip.
+That objective becomes non-trivial when fuel prices vary across stations and drivers are free
+to choose both where to stop and how much fuel to buy.
+This report studies the fuel-aware route optimization problem on Thailand road networks,
+where the task is to jointly determine a feasible route and a refuelling policy that minimizes
+monetary fuel expenditure.
+
+The transportation network is modeled as a weighted directed graph whose nodes represent
+fuel stations and whose edges represent feasible travel segments.
+Six algorithmic strategies are implemented and evaluated: State-Expanded Dijkstra, Greedy,
+Dynamic Programming, Standard A*, Refuel A* (RF-A*), and the proposed Partial-Fill A*
+(PF-A*).
+PF-A* strengthens RF-A* with a fuel-level-aware heuristic that incorporates both the current
+fuel state and the cheapest reachable station.
+Its admissibility and consistency are formally proved.
+
+The report consolidates the full problem formulation, the algorithmic framework, the data
+model, and the current empirical evaluation pipeline for both synthetic benchmarks and real
+Thai routes.
+The available synthetic results already show that PF-A* matches the best observed costs of
+the exact baselines while substantially reducing runtime and node expansions in the tested
+configurations.
+The final-report structure created here is also prepared to absorb the full Experiment~6
+real-route evaluation and the final high-run synthetic results without requiring a redesign of
+the document.
+\end{abstract}
+
+\setcounter{page}{2}
+\tableofcontents
+\listoftables
+\listoffigures
+
+\chapter*{List of Abbreviations}
+\addcontentsline{toc}{chapter}{List of Abbreviations}
+\begin{tabular}{ll}
+GSP    & Gas Station Problem \\
+RCSP   & Resource-Constrained Shortest Path \\
+OSM    & OpenStreetMap \\
+DP     & Dynamic Programming \\
+EPPO   & Energy Policy and Planning Office \\
+HDX    & Humanitarian Data Exchange \\
+THB    & Thai Baht \\
+RF-A*  & Refuel A* (Nandy et al., 2023) \\
+PF-A*  & Partial-Fill A* (proposed) \\
+\end{tabular}
+
+\clearpage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\include{chapters/ch1_problem}
+\include{chapters/ch2_related}
+\include{chapters/ch3_algorithms}
+\include{chapters/ch4_data_structures}
+\include{chapters/ch5_correctness}
+\include{chapters/ch6_complexity}
+\include{chapters/ch7_experiments}
+\include{chapters/ch8_results_discussion}
+\include{chapters/ch9_conclusion}
+
+\nocite{*}
+\printbibliography[heading=bibintoc, title={References}]
+
+\end{document}
