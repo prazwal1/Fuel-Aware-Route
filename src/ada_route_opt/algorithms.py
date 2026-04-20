@@ -23,6 +23,17 @@ def _fuel_needed_units(distance_km: float, efficiency_km_per_liter: float, step:
     return _units(distance_km / efficiency_km_per_liter, step, mode="ceil")
 
 
+def _bounded_initial_state(
+    source: str,
+    tank_capacity_liters: float,
+    initial_fuel_liters: float,
+    fuel_step_liters: float,
+) -> tuple[int, int, State]:
+    capacity = _units(tank_capacity_liters, fuel_step_liters)
+    initial = min(_units(initial_fuel_liters, fuel_step_liters), capacity)
+    return capacity, initial, (source, initial)
+
+
 def _reconstruct(parent: Parent, goal: State) -> tuple[list[str], list[str]]:
     # Parent pointers track fuel states; the returned path collapses repeated station IDs.
     states: list[State] = [goal]
@@ -72,9 +83,12 @@ def _run_best_first(
     heuristic: Callable[[str, int], float],
     algorithm_name: str,
 ) -> RouteResult:
-    capacity = _units(tank_capacity_liters, fuel_step_liters)
-    initial = min(_units(initial_fuel_liters, fuel_step_liters), capacity)
-    start: State = (source, initial)
+    capacity, initial, start = _bounded_initial_state(
+        source,
+        tank_capacity_liters,
+        initial_fuel_liters,
+        fuel_step_liters,
+    )
 
     best_cost: dict[State, float] = defaultdict(lambda: inf)
     parent: Parent = {}
@@ -153,9 +167,12 @@ def full_tank_only_dijkstra(
     efficiency_km_per_liter: float = 10.0,
     fuel_step_liters: float = 1.0,
 ) -> RouteResult:
-    capacity = _units(tank_capacity_liters, fuel_step_liters)
-    initial = min(_units(initial_fuel_liters, fuel_step_liters), capacity)
-    start: State = (source, initial)
+    capacity, initial, start = _bounded_initial_state(
+        source,
+        tank_capacity_liters,
+        initial_fuel_liters,
+        fuel_step_liters,
+    )
 
     best_cost: dict[State, float] = defaultdict(lambda: inf)
     parent: Parent = {}
@@ -309,8 +326,12 @@ def greedy_refuel(
     efficiency_km_per_liter: float = 10.0,
     fuel_step_liters: float = 1.0,
 ) -> RouteResult:
-    capacity = _units(tank_capacity_liters, fuel_step_liters)
-    fuel = min(_units(initial_fuel_liters, fuel_step_liters), capacity)
+    capacity, fuel, _start = _bounded_initial_state(
+        source,
+        tank_capacity_liters,
+        initial_fuel_liters,
+        fuel_step_liters,
+    )
     node = source
     cost = 0.0
     path = [source]
