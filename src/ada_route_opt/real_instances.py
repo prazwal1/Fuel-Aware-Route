@@ -58,6 +58,7 @@ def _vehicle_value(vehicle: dict[str, object], *keys: str, default: float) -> fl
 def load_real_instance(path: str | Path) -> RealRouteInstance:
     payload = json.loads(Path(path).read_text(encoding="utf-8"))
 
+    # JSON files may come from different collection scripts, so helper accessors normalize keys.
     graph = FuelGraph()
     for station in payload["stations"]:
         graph.add_station(
@@ -68,6 +69,7 @@ def load_real_instance(path: str | Path) -> RealRouteInstance:
         )
 
     for edge in payload["edges"]:
+        # Edges are stored as directed travel segments between station nodes.
         graph.add_edge(
             _edge_from_node(edge),
             _edge_to_node(edge),

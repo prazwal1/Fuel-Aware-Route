@@ -12,6 +12,7 @@ Parent = dict[State, tuple[State, str]]
 
 
 def _units(liters: float, step: float, *, mode: str = "round") -> int:
+    # Store fuel as discrete integer units so heap states remain hashable and comparable.
     value = liters / step
     if mode == "ceil":
         return int(ceil(value - 1e-12))
@@ -23,6 +24,7 @@ def _fuel_needed_units(distance_km: float, efficiency_km_per_liter: float, step:
 
 
 def _reconstruct(parent: Parent, goal: State) -> tuple[list[str], list[str]]:
+    # Parent pointers track fuel states; the returned path collapses repeated station IDs.
     states: list[State] = [goal]
     actions: list[str] = []
     current = goal
@@ -50,6 +52,7 @@ def _euclidean_lower_bound_km(graph: FuelGraph, node: str, target: str) -> float
 
 
 def _reachable_min_price(graph: FuelGraph, node: str, fuel_units: int, efficiency: float, step: float) -> float:
+    # PF-A* uses only stations reachable with the current fuel as a local lower-bound price.
     best = graph.price(node)
     for edge in graph.neighbors(node):
         needed = _fuel_needed_units(edge.distance_km, efficiency, step)
@@ -82,6 +85,7 @@ def _run_best_first(
     while heap:
         _priority, cost, node, fuel = heapq.heappop(heap)
         state = (node, fuel)
+        # Skip stale heap entries left behind after a better path to the same state was found.
         if cost != best_cost[state]:
             continue
         expanded += 1
@@ -92,6 +96,7 @@ def _run_best_first(
         for edge in graph.neighbors(node):
             needed = _fuel_needed_units(edge.distance_km, efficiency_km_per_liter, fuel_step_liters)
             if needed <= fuel:
+                # Driving transitions preserve monetary cost and reduce only the fuel dimension.
                 next_state = (edge.to_node, fuel - needed)
                 if cost < best_cost[next_state]:
                     best_cost[next_state] = cost
@@ -100,6 +105,7 @@ def _run_best_first(
                     heapq.heappush(heap, (priority, cost, next_state[0], next_state[1]))
 
         for buy_units in range(1, capacity - fuel + 1):
+            # Purchase transitions stay at the same node and enumerate each feasible fill amount.
             next_fuel = fuel + buy_units
             buy_cost = buy_units * fuel_step_liters * graph.price(node)
             next_cost = cost + buy_cost
