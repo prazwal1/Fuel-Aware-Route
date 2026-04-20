@@ -8,9 +8,9 @@ The project studies routing when fuel prices vary across stations and the driver
 - automated experiments in `scripts`
 - correctness tests in `tests`
 - real-route and synthetic datasets in `data` and `results`
-- the canonical final report in `final-report-revised`
+- the canonical final report in `final-report`
 
-## Submission Structure
+## Project Layout
 
 The repository is organized around these folders:
 
@@ -21,13 +21,25 @@ tests/                  Unit tests
 configs/                Experiment configuration files
 data/                   Input datasets, including real-route corridor data
 results/                Processed experiment outputs and report-ready assets
-final-report-revised/   Final LaTeX report source and compiled PDF
+final-report/           Final LaTeX report source and compiled PDF
 ```
 
 The latest report to use is:
 
-- `final-report-revised/final-report.tex`
-- `final-report-revised/final-report.pdf`
+- `final-report/final-report.tex`
+- `final-report/final-report.pdf`
+
+## Quick Start
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+pip install -e .
+pytest -q
+```
+
+On Windows PowerShell, use `.venv\Scripts\Activate.ps1` instead of the `source` command.
 
 ## Implemented Algorithms
 
@@ -38,7 +50,7 @@ The latest report to use is:
 - RF-A*
 - PF-A*
 
-## Environment Setup
+## Environment Setup Details
 
 Tested with Python 3.11+.
 
@@ -62,7 +74,7 @@ pip install -e .
 
 ## Tests
 
-Run the test suite with:
+Run the test suite after installing dependencies:
 
 ```bash
 pytest -q
@@ -90,7 +102,7 @@ Analyze real-route results into report assets:
 
 ## Rebuild The Final Report
 
-From `final-report-revised`:
+From `final-report`:
 
 ```powershell
 pdflatex -interaction=nonstopmode final-report.tex
