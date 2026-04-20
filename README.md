@@ -1,183 +1,106 @@
 # Fuel-Aware Route Optimization on Thailand Road Networks
 
-This repository is a runnable Python scaffold for the ADA project proposal in `ADA-Proposal.pdf`.
-It implements the core fuel-aware route optimization algorithms and benchmarking harness:
+This repository contains the implementation, experiment data, analysis assets, and final report for the ADA project on fuel-aware route optimization.
 
-- State-expanded Dijkstra
-- Greedy refueling baseline
-- Dynamic programming baseline
+The project studies routing when fuel prices vary across stations and the driver can choose both where to stop and how much fuel to buy. The repository includes:
+
+- core algorithms in `src/ada_route_opt`
+- automated experiments in `scripts`
+- correctness tests in `tests`
+- real-route and synthetic datasets in `data` and `results`
+- the canonical final report in `final-report-revised`
+
+## Submission Structure
+
+The repository is organized around these folders:
+
+```text
+src/                    Python package with graph and algorithm implementations
+scripts/                Experiment runners and analysis scripts
+tests/                  Unit tests
+configs/                Experiment configuration files
+data/                   Input datasets, including real-route corridor data
+results/                Processed experiment outputs and report-ready assets
+final-report-revised/   Final LaTeX report source and compiled PDF
+```
+
+The latest report to use is:
+
+- `final-report-revised/final-report.tex`
+- `final-report-revised/final-report.pdf`
+
+## Implemented Algorithms
+
+- State-Expanded Dijkstra
+- Greedy Refuel baseline
+- Dynamic Programming
 - Standard A*
-- Refuel A* (RF-A*)
-- Partial-Fill A* (PF-A*)
-- Synthetic graph generation
-- Benchmark scripts for the proposed experiments
-- Unit tests for correctness checks
+- RF-A*
+- PF-A*
 
-## VM Setup
+## Environment Setup
 
-Tested target from the proposal: Ubuntu 22.04 LTS, Python 3.11.
+Tested with Python 3.11+.
+
+Create an environment and install dependencies:
 
 ```bash
-sudo apt update
-sudo apt install -y python3.11 python3.11-venv python3-pip
-python3.11 -m venv .venv
+python -m venv .venv
 source .venv/bin/activate
-pip install --upgrade pip
 pip install -r requirements.txt
 pip install -e .
 ```
 
-## Quick Correctness Run
+On Windows PowerShell:
+
+```powershell
+python -m venv .venv
+.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+pip install -e .
+```
+
+## Tests
+
+Run the test suite with:
 
 ```bash
-source .venv/bin/activate
 pytest -q
 ```
 
-## Run a Small Benchmark
+## Main Experiment Workflows
+
+Run the synthetic experiment sweep:
 
 ```bash
-source .venv/bin/activate
-python scripts/run_synthetic_experiment.py --nodes 100 --runs 25 --seed 42
-```
-
-## Run the Proposal-Style Experiment Sweep
-
-```bash
-source .venv/bin/activate
 python scripts/run_all_experiments.py --output results
 ```
 
-The default sweep is intentionally smaller than the proposal's final 10,000 timed runs so you can sanity-check the VM quickly. Increase `--runs` when the code is stable:
-
-```bash
-python scripts/run_all_experiments.py --runs 10000 --output results_full
-```
-
-## Windows VM Setup With uv
-
-From PowerShell in this project folder:
+Run the real-route experiment sweep:
 
 ```powershell
-uv python install 3.11
-uv venv --python 3.11
-uv pip install -r requirements.txt -e .
-uv run pytest -q
+.\scripts\run_windows_real_experiments.ps1 -InstancesDir data/real_routes/generated -Runs 10000 -Warmups 200 -Output results_real -PurchaseModel both
 ```
 
-Quick smoke run:
+Analyze real-route results into report assets:
 
 ```powershell
-.\scripts\run_windows_synthetic_experiments.ps1 -Profile smoke -Runs 10 -Warmups 0 -Output results_smoke
+.venv\Scripts\python.exe scripts\analyze_real_results.py --input real_route_results.csv --instances-dir data/real_routes/generated --output-dir results/report_assets/exp6_real_routes
 ```
 
-Generate charts and report-ready tables from a completed CSV:
+## Rebuild The Final Report
+
+From `final-report-revised`:
 
 ```powershell
-uv run python scripts/analyze_synthetic_results.py --input results/synthetic_results.csv --output-dir results/report_assets
-```
-
-Run the minimal Experiment 6 real-route pipeline:
-
-```powershell
-.\scripts\run_windows_real_experiments.ps1 -InstancesDir data/real_routes -Runs 10 -Warmups 0 -Output results_real -PurchaseModel both
-```
-
-This writes:
-
-```text
-results_real/real_route_results.csv
-```
-
-The required real-route JSON input format is documented in:
-
-```text
-data/real_routes/README.md
-```
-
-Collect real-route OSM road and fuel-station data first:
-
-```powershell
-.\scripts\run_windows_collect_real_route_data.ps1 -Config data/real_routes/corridors.example.json -OutputDir data/real_routes/generated -RawDir data/real_routes/raw
-```
-
-Time-saving 100-run synthetic sweep:
-
-```powershell
-.\scripts\run_synthetic_100.ps1
-```
-
-Light 10,000-run synthetic sweep designed to finish much faster than the full proposal-scale run:
-
-```powershell
-.\scripts\run_windows_synthetic_experiments.ps1 -Profile lite -Runs 10000 -Warmups 0 -Output results_lite_10k -Degree 3
-```
-
-If the VM is still slow, reduce only the graph size while keeping 10,000 runs:
-
-```powershell
-.\scripts\run_windows_synthetic_experiments.ps1 -Profile lite -Runs 10000 -Warmups 0 -Output results_lite_10k_small -Degree 3 -BaseNodes 200 -ScalabilityNodes "100,300,500"
-```
-
-Proposal-style synthetic run:
-
-```powershell
-.\scripts\run_windows_synthetic_experiments.ps1 -Profile proposal -Runs 10000 -Warmups 200 -Output results_proposal
-```
-
-The proposal profile runs synthetic experiments 1, 2, 3, 4, 5, and 7. Experiment 6 is real Thai routes, so it is intentionally excluded from the synthetic-data sweep.
-
-## Bash Setup With uv
-
-On Linux, macOS, or Git Bash/WSL:
-
-```bash
-chmod +x scripts/run_bash_synthetic_experiments.sh scripts/run_synthetic_100.sh
-./scripts/run_synthetic_100.sh
-```
-
-The 100-run config lives at:
-
-```text
-configs/synthetic_100.env
-```
-
-It runs all synthetic experiments 1, 2, 3, 4, 5, and 7 with `100` timed runs each:
-
-```text
-PROFILE=lite
-RUNS=100
-WARMUPS=0
-OUTPUT=results_synthetic_100
-DEGREE=3
-BASE_NODES=300
-SCALABILITY_NODES=100,300,1000
-```
-
-You can also run the flexible bash script with inline overrides:
-
-```bash
-PROFILE=lite RUNS=100 WARMUPS=0 OUTPUT=results_synthetic_100 DEGREE=3 BASE_NODES=300 SCALABILITY_NODES=100,300,1000 ./scripts/run_bash_synthetic_experiments.sh
-```
-
-## Project Layout
-
-```text
-src/ada_route_opt/
-  algorithms.py      Core Dijkstra, Greedy, DP, A*, RF-A*, PF-A*
-  graph.py           Graph and result data structures
-  synthetic.py       Synthetic benchmark graph generator
-  metrics.py         Timing and result helpers
-scripts/
-  run_synthetic_experiment.py
-  run_all_experiments.py
-tests/
-  test_algorithms.py
+pdflatex -interaction=nonstopmode final-report.tex
+biber final-report
+pdflatex -interaction=nonstopmode final-report.tex
+pdflatex -interaction=nonstopmode final-report.tex
 ```
 
 ## Notes
 
-- Fuel is discretized by `fuel_step_liters`, default `1.0 L`, matching the proposal's `F = C / epsilon`.
-- Travel has zero monetary edge cost. Monetary cost is paid only on refuel actions.
-- `PF-A*` includes the fuel-level-aware heuristic described in the proposal. The benchmark cross-checks its returned cost against Dijkstra.
-- Real OSM/EPPO ingestion is intentionally left as an integration layer because the exact source format can change. The core algorithms accept any graph loaded into `FuelGraph`.
+- `results/report_assets` contains the tables and figures used in the final report.
+- `real_route_results.csv` is the full Experiment 6 benchmark output.
+- `data/real_routes/generated` contains the generated corridor instances used by the real-route experiments.

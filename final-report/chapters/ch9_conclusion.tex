@@ -1,0 +1,44 @@
+\chapter{Conclusion}
+\label{ch:conclusion}
+
+This project formulates fuel-aware route optimization on Thailand road networks as a shortest
+path problem with explicit refueling decisions, implements six algorithmic strategies, and
+provides formal correctness arguments for the proposed Partial-Fill A* heuristic.
+The final empirical study combines a reproducible synthetic benchmark suite with a completed
+real-route corridor evaluation of Bangkok--Chiang Mai, Bangkok--Phuket, and
+Bangkok--Khon Kaen, the latter comprising 210{,}000 timed runs.
+The real-route study is the central empirical anchor of the project: the variable-purchase
+model is cheaper than full-tank-only routing on all three corridors, with savings of
+5.92\%, 1.60\%, and 4.19\% respectively, and PF-A* consistently reduces node expansions
+relative to RF-A* on every corridor (802 vs.\ 1360, 975 vs.\ 1610, and 441 vs.\ 749
+expanded states).
+
+Just as importantly, the repository now supports an end-to-end research workflow rather than
+an isolated algorithm prototype.
+It includes synthetic benchmark generation, automated result analysis, a real-route data
+collection pipeline, a dedicated Experiment~6 execution path for Thai corridors, and scripts
+that generate report-ready tables directly from both synthetic and real benchmark outputs.
+That makes the project reproducible and gives the final dissertation a clear empirical
+foundation.
+
+The final conclusion is therefore nuanced but strong.
+PF-A* is a correct optimal heuristic method on the completed real-route dataset and
+consistently reduces node expansions relative to RF-A*.
+At the same time, the real-route results show that PF-A* is not always the fastest method in
+wall-clock time on smaller corridor abstractions; in this setting, State-Expanded Dijkstra and
+Dynamic Programming remain faster despite exploring the same optimal state space.
+This makes the thesis more credible rather than less: the project does not merely advertise a
+new heuristic, but characterises where its benefits do and do not materialise.
+
+Two limitations remain explicit in the final write-up.
+First, the synthetic experiments are reported under a reduced 3-run benchmark profile, with
+the full 10{,}000-run target profile reserved for future work and already exercised on
+the real-route evaluation.
+Second, Standard A* and RF-A* exhibit a small but persistent cost gap against the
+Dijkstra/DP/PF-A* exact-agreement set on two real-route corridors; this is tracked as an
+implementation-audit item rather than suppressed.
+Additionally, the real-route dataset consists of curated corridor abstractions with
+province-level prices rather than a raw nationwide OSM station graph, so Experiment~6 is
+presented as a realistic corridor case study.
+With these caveats acknowledged, the project now stands as a complete and reproducible study
+of fuel-aware route optimization on Thailand road-network corridor instances.

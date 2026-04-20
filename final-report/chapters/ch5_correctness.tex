@@ -1,0 +1,228 @@
+\chapter{Correctness Arguments}
+\label{ch:correctness}
+
+All six algorithms operate on the state-expanded graph $G^{*}$ under the variable purchase
+model: the driver chooses exactly how much fuel $b \in [0, C-f]$ to buy at each station, and
+the state $(v,f)$ tracks both position and remaining fuel.
+
+\section{Dijkstra-Based Approach (Baseline 1)}
+
+Correctness follows from two properties of $G^{*}$:
+\begin{enumerate}
+    \item \textbf{Non-negative edge costs.}
+          All travel edges have cost~0 and all refuel edges have cost $b \cdot p(v) \geq 0$,
+          satisfying Dijkstra's prerequisite.
+    \item \textbf{Optimal substructure.}
+          If the optimal path passes through state $(v,f)$, the sub-path to $(v,f)$ must also
+          be optimal, since fuel costs decompose additively over refuel edges.
+\end{enumerate}
+Because Dijkstra exhausts all states $(v,f)$ in non-decreasing cost order, it is guaranteed
+to find the globally minimum purchase cost for any $f_0$.
+
+\section{Greedy Strategy: Counterexample (Baseline 2)}
+
+The greedy strategy is not optimal in general.
+On the running example with $\eta=10$\,km/L, $C=40$\,L, $f_0=28$\,L:
+
+\begin{table}[ht]
+\centering
+\caption{Greedy counterexample.}
+\label{tab:greedy_counter}
+\begin{tabular}{llll}
+\toprule
+Strategy & Buy at A & Buy at E & Total \\
+\midrule
+Greedy  & 12\,L@36 $= 432$\,THB & 18\,L@24 $= 432$\,THB & 864\,THB ($+300\%$) \\
+Optimal & 0\,L & 9\,L@24 $= 216$\,THB & 216\,THB \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The failure is structural: greedy cannot see that $f_0=28$\,L already suffices to coast to
+station E without any purchase at A.
+
+\section{Dynamic Programming Correctness (Baseline 3)}
+
+DP correctness follows from the principle of optimality applied to the variable-purchase
+state space.
+The recurrence
+\[
+    \mathrm{DP}[w][f_w] = \min_{b}\!\bigl(\mathrm{DP}[v][f] + b \cdot p(v)\bigr)
+\]
+considers every purchase amount $b \in \{0,\varepsilon,\ldots,C-f\}$ at every predecessor
+state $(v,f)$ and propagates the minimum cost forward.
+Initializing with $\mathrm{DP}[s][f_0]=0$ for arbitrary $f_0$ correctly captures a partial
+starting tank.
+Taking $\min_{f}\mathrm{DP}[t][f]$ over all arrival fuel levels yields the true global
+optimum.
+
+\section{Standard A* Correctness (Baseline 4)}
+
+A* uses $h(v) = d_{\mathrm{geo}}(v,t)/\eta \cdot p_{\min}$.
+
+\paragraph{Admissibility.}
+For any state $(v,f)$:
+\[
+    h(v) = \frac{d_{\mathrm{geo}}(v,t)}{\eta} \cdot p_{\min}
+         \leq \frac{d_{\mathrm{road}}(v,t)}{\eta} \cdot p_{\min}
+         \leq h^{*}(v,f),
+\]
+since straight-line distance $\leq$ road distance, and $p_{\min}$ is the global lower bound
+on any fuel price paid.
+
+\paragraph{Consistency.}
+For any edge $(v,f) \to (w,f')$ in $G^{*}$:
+\[
+    h(v) \leq C(v,w) + h(w)
+\]
+by the triangle inequality on geodesic distances, so the heuristic satisfies the consistency
+condition.
+
+Both properties guarantee that A* returns an optimal solution.
+However, because $h$ ignores $f$, states $(v,f_1)$ and $(v,f_2)$ with $f_1 \neq f_2$ receive
+identical heuristic values, limiting pruning effectiveness.
+
+\section{RF-A* Correctness (Baseline 5)}
+
+RF-A* uses the same heuristic $h_{\mathrm{RF}}(v)$ as standard A* and inherits the same
+admissibility and consistency arguments.
+Optimality of each segment is guaranteed by the underlying A* call; the segment-by-segment
+construction preserves overall optimality because refueling costs compose additively.
+
+\section{PF-A* Correctness}
+\label{sec:pfa_correctness}
+
+PF-A* replaces $h_{\mathrm{RF}}$ with the fuel-level-aware heuristic
+\[
+    h_{\mathrm{PF}}(v, f)
+    = \max\!\left(\frac{d_{\mathrm{geo}}(v, t)}{\eta} - f,\; 0\right)
+      \cdot p_{\min}^{\mathrm{reach}}(v, f).
+\]
+
+\subsection{Admissibility}
+
+\begin{lemma}[Fuel-need underestimate]
+    $\max(d_{\mathrm{geo}}(v,t)/\eta - f,\; 0) \leq$ actual additional fuel required from
+    state $(v,f)$ on any feasible path.
+\end{lemma}
+\begin{proof}
+    Let $\ell^{*}$ be the road distance of the optimal remaining path.
+    Since $d_{\mathrm{geo}}(v,t) \leq \ell^{*}$, the actual fuel needed beyond $f$ satisfies
+    $\ell^{*}/\eta - f \geq d_{\mathrm{geo}}(v,t)/\eta - f$.
+    Taking $\max(\cdot, 0)$ on both sides preserves the inequality.
+\end{proof}
+
+\begin{lemma}[Price underestimate]
+    $p_{\min}^{\mathrm{reach}}(v,f) \leq$ any fuel price paid on the optimal remaining path
+    from state $(v,f)$.
+\end{lemma}
+\begin{proof}
+    Every station visited on the optimal path from $(v,f)$ must be reachable from $v$
+    given at least $f$ litres of fuel.
+    By definition, $p_{\min}^{\mathrm{reach}}(v,f)$ is the minimum price over all such
+    stations, so it is a lower bound on every price paid.
+\end{proof}
+
+\begin{theorem}[Admissibility of $h_{\mathrm{PF}}$]
+    $h_{\mathrm{PF}}(v,f) \leq h^{*}(v,f)$ for all states $(v,f)$.
+\end{theorem}
+\begin{proof}
+    Let $\Delta f = \max(d_{\mathrm{geo}}(v,t)/\eta - f,\; 0)$ and let $p^{*}$ be the price
+    at which the additional fuel is actually purchased on the optimal path.
+    By Lemma~1, the actual additional fuel needed $\geq \Delta f$.
+    By Lemma~2, $p^{*} \geq p_{\min}^{\mathrm{reach}}(v,f)$.
+    Therefore $h^{*}(v,f) \geq \Delta f \cdot p^{*} \geq \Delta f \cdot p_{\min}^{\mathrm{reach}}(v,f) = h_{\mathrm{PF}}(v,f)$.
+\end{proof}
+
+\subsection{Consistency}
+
+\begin{theorem}[Consistency of $h_{\mathrm{PF}}$]
+    For every transition $(v,f) \to (w,f')$ in $G^{*}$ with transition cost $c$:
+    \[
+        h_{\mathrm{PF}}(v,f) \leq c + h_{\mathrm{PF}}(w,f').
+    \]
+\end{theorem}
+\begin{proof}
+    We consider the two types of transitions separately.
+
+    \textbf{Travel edge} $(v,f) \to (w,\; f - d(v,w)/\eta)$, cost $c = 0$.
+    Let $\delta = d(v,w)/\eta$ (fuel consumed).
+    Then $f' = f - \delta$.
+    \begin{align*}
+        h_{\mathrm{PF}}(w, f')
+        &= \max\!\left(\frac{d_{\mathrm{geo}}(w,t)}{\eta} - f',\; 0\right)
+           \cdot p_{\min}^{\mathrm{reach}}(w, f') \\
+        &\geq \max\!\left(\frac{d_{\mathrm{geo}}(w,t)}{\eta} - f',\; 0\right)
+           \cdot p_{\min}^{\mathrm{reach}}(v, f)
+           \quad\text{(reachable set from $w$ may be smaller)}.
+    \end{align*}
+    By the triangle inequality on geodesic distances,
+    $d_{\mathrm{geo}}(v,t) \leq d(v,w) + d_{\mathrm{geo}}(w,t)$, so
+    $d_{\mathrm{geo}}(v,t)/\eta - f \leq d_{\mathrm{geo}}(w,t)/\eta - f'$.
+    Hence $h_{\mathrm{PF}}(v,f) \leq h_{\mathrm{PF}}(w,f') = 0 + h_{\mathrm{PF}}(w,f')$.
+
+    \textbf{Refuel edge} $(v,f) \to (v,\; f+b)$, cost $c = b \cdot p(v)$, $b > 0$.
+    Then $f' = f + b$.
+    \begin{align*}
+        c + h_{\mathrm{PF}}(v,f')
+        &= b \cdot p(v) + \max\!\left(\frac{d_{\mathrm{geo}}(v,t)}{\eta} - f - b,\; 0\right)
+           \cdot p_{\min}^{\mathrm{reach}}(v, f').
+    \end{align*}
+    Let $D = d_{\mathrm{geo}}(v,t)/\eta$.
+    \textit{Case 1}: $f \geq D$.
+    Then $h_{\mathrm{PF}}(v,f) = 0 \leq c + h_{\mathrm{PF}}(v,f')$.
+    \textit{Case 2}: $f < D \leq f + b$.
+    Then $h_{\mathrm{PF}}(v,f) = (D-f)\cdot p_{\min}^{\mathrm{reach}}(v,f)$ and
+    $h_{\mathrm{PF}}(v,f') = 0$, so we need $(D-f)\cdot p_{\min}^{\mathrm{reach}}(v,f) \leq b \cdot p(v)$.
+    Since $D - f \leq b$ and $p_{\min}^{\mathrm{reach}}(v,f) \leq p(v)$,
+    this holds.
+    \textit{Case 3}: $f + b < D$.
+    Then both sides are positive.
+    We need $(D-f)\cdot p_{\min}^{\mathrm{reach}}(v,f) \leq b\cdot p(v) + (D-f-b)\cdot p_{\min}^{\mathrm{reach}}(v,f')$.
+    Since $p_{\min}^{\mathrm{reach}}(v,f') \geq p_{\min}^{\mathrm{reach}}(v,f)$ (buying more
+    fuel does not extend range to cheaper stations) and $p(v) \geq p_{\min}^{\mathrm{reach}}(v,f)$,
+    the right-hand side dominates.
+\end{proof}
+
+\subsection{Relationship to RF-A*}
+
+It is tempting to claim $h_{\mathrm{PF}}(v,f) \leq h_{\mathrm{RF}}(v)$ for all $(v,f)$, but
+this does \emph{not} hold universally.
+The two heuristics differ along two axes that can push in opposite directions: the
+fuel-need term $\max(d_{\mathrm{geo}}(v,t)/\eta - f,\; 0)$ in $h_{\mathrm{PF}}$ is always
+no larger than the corresponding term $d_{\mathrm{geo}}(v,t)/\eta$ in $h_{\mathrm{RF}}$,
+but the price term $p_{\min}^{\mathrm{reach}}(v,f)$ can exceed the global $p_{\min}$.
+A universal pointwise dominance between $h_{\mathrm{PF}}$ and $h_{\mathrm{RF}}$ would
+therefore require an additional assumption relating the price ratio to the fuel ratio, and we
+do not claim such an assumption holds in general.
+
+Instead, we make a weaker but defensible claim.
+$h_{\mathrm{PF}}$ is \emph{state-aware}: it uses the current fuel level $f$ and the set of
+stations actually reachable from $(v,f)$, whereas $h_{\mathrm{RF}}$ depends only on $v$.
+This additional information allows $h_{\mathrm{PF}}$ to distinguish states that share the
+same $v$ but differ in $f$ or in reachable-station set, which RF-A* cannot do.
+On networks with non-trivial price variance and sufficient station density, which is the regime of
+interest for real Thai corridors, this state-awareness empirically reduces node expansions,
+as reported in Chapters~\ref{ch:complexity} and~\ref{ch:results}.
+
+\begin{proposition}[State-awareness of $h_{\mathrm{PF}}$]
+    For any fixed node $v$, the map $f \mapsto h_{\mathrm{PF}}(v,f)$ is non-increasing in
+    $f$, whereas $h_{\mathrm{RF}}(v)$ is constant in $f$.
+\end{proposition}
+\begin{proof}
+    Fix $v$ and let $f_1 \leq f_2$.
+    The fuel-need term satisfies
+    $\max(d_{\mathrm{geo}}(v,t)/\eta - f_1,\; 0)
+     \geq \max(d_{\mathrm{geo}}(v,t)/\eta - f_2,\; 0)$.
+    The reachable-station set from $(v,f_2)$ contains the reachable-station set from
+    $(v,f_1)$, so
+    $p_{\min}^{\mathrm{reach}}(v,f_2) \leq p_{\min}^{\mathrm{reach}}(v,f_1)$.
+    Both factors are non-negative and non-increasing in $f$, so their product is
+    non-increasing in $f$.
+    The constancy of $h_{\mathrm{RF}}(v)$ is immediate from its definition.
+\end{proof}
+
+Because $h_{\mathrm{PF}}$ is both admissible and consistent (Theorems above), PF-A*
+inherits the optimality guarantee of RF-A*.
+The empirical benefit of PF-A* over RF-A* in node expansions is evaluated directly in
+Experiments~5 and~6.

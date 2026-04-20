@@ -42,7 +42,7 @@ def test_rf_and_pf_match_dijkstra_on_running_example() -> None:
 
 
 def test_real_instance_loader_and_algorithms() -> None:
-    instance = load_real_instance(Path("data/real_routes/example_minimal.json"))
+    instance = load_real_instance(Path("data/real_routes/generated/bkk_to_kkc.json"))
     dijkstra = state_expanded_dijkstra(
         instance.graph,
         instance.source,
@@ -67,7 +67,8 @@ def test_real_instance_loader_and_algorithms() -> None:
         instance.initial_fuel_liters,
         instance.efficiency_km_per_liter,
     )
-    assert instance.instance_id == "example_minimal"
+    assert instance.instance_id == "bkk_to_kkc"
+    assert instance.route_name == "Bangkok to Khon Kaen"
     assert dijkstra.feasible
     assert pf.feasible
     assert full_tank.feasible

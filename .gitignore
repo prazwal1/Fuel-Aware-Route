@@ -1,20 +1,29 @@
-*.ovpn
 .venv/
 __pycache__/
 *.pyc
 *.pyo
-*.pdf
+
+# Local secrets and machine-specific files
+*.ovpn
+
+# Archives
+*.zip
+
+# LaTeX build artifacts
 *.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
 *.log
+*.lot
 *.out
+*.run.xml
+*.synctex.gz
 *.toc
+
+# Misc generated files
 *.gz
 *.xml
-*.zip
-*.bbl
-*.blg
-*.synctex.gz
-*.fls
-*.fdb_latexmk
-*.bcf
-*.lof

@@ -19,34 +19,75 @@ class RealRouteInstance:
     graph: FuelGraph
 
 
+def _station_node_id(station: dict[str, object]) -> str:
+    node_id = station.get("node_id", station.get("id"))
+    if node_id is None:
+        raise KeyError("Station entry is missing both 'node_id' and 'id'.")
+    return str(node_id)
+
+
+def _station_price(station: dict[str, object]) -> float:
+    if "price" in station:
+        return float(station["price"])
+    if "price_thb_per_l" in station:
+        return float(station["price_thb_per_l"])
+    raise KeyError("Station entry is missing both 'price' and 'price_thb_per_l'.")
+
+
+def _edge_from_node(edge: dict[str, object]) -> str:
+    from_node = edge.get("from_node", edge.get("source"))
+    if from_node is None:
+        raise KeyError("Edge entry is missing both 'from_node' and 'source'.")
+    return str(from_node)
+
+
+def _edge_to_node(edge: dict[str, object]) -> str:
+    to_node = edge.get("to_node", edge.get("target"))
+    if to_node is None:
+        raise KeyError("Edge entry is missing both 'to_node' and 'target'.")
+    return str(to_node)
+
+
+def _vehicle_value(vehicle: dict[str, object], *keys: str, default: float) -> float:
+    for key in keys:
+        if key in vehicle:
+            return float(vehicle[key])
+    return default
+
+
 def load_real_instance(path: str | Path) -> RealRouteInstance:
     payload = json.loads(Path(path).read_text(encoding="utf-8"))
 
     graph = FuelGraph()
     for station in payload["stations"]:
         graph.add_station(
-            station["node_id"],
-            float(station["price"]),
+            _station_node_id(station),
+            _station_price(station),
             lat=station.get("lat"),
             lon=station.get("lon"),
         )
 
     for edge in payload["edges"]:
         graph.add_edge(
-            edge["from_node"],
-            edge["to_node"],
+            _edge_from_node(edge),
+            _edge_to_node(edge),
             float(edge["distance_km"]),
         )
 
     defaults = payload.get("vehicle", {})
     return RealRouteInstance(
         instance_id=payload["instance_id"],
-        route_name=payload.get("route_name", payload["instance_id"]),
-        source=payload["source"],
-        target=payload["target"],
-        tank_liters=float(defaults.get("tank_liters", 40.0)),
-        initial_fuel_liters=float(defaults.get("initial_fuel_liters", 28.0)),
-        efficiency_km_per_liter=float(defaults.get("efficiency_km_per_liter", 10.0)),
+        route_name=payload.get("route_name", payload.get("label", payload["instance_id"])),
+        source=str(payload["source"]),
+        target=str(payload["target"]),
+        tank_liters=_vehicle_value(defaults, "tank_liters", "tank_capacity_l", default=40.0),
+        initial_fuel_liters=_vehicle_value(defaults, "initial_fuel_liters", "initial_fuel_l", default=28.0),
+        efficiency_km_per_liter=_vehicle_value(
+            defaults,
+            "efficiency_km_per_liter",
+            "efficiency_km_per_l",
+            default=10.0,
+        ),
         graph=graph,
     )
 

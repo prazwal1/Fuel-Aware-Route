@@ -1,0 +1,5 @@
+| Route                 | Instance ID | Variable-Purchase Cost | Full-Tank-Only Cost | Savings (THB) | Savings (%) |
+| --------------------- | ----------- | ---------------------- | ------------------- | ------------- | ----------- |
+| Bangkok to Chiang Mai | bkk_to_cnx  | 2106.04                | 2238.58             | 132.54        | 5.92        |
+| Bangkok to Phuket     | bkk_to_hkt  | 2734.66                | 2779.24             | 44.58         | 1.60        |
+| Bangkok to Khon Kaen  | bkk_to_kkc  | 1004.44                | 1048.32             | 43.88         | 4.19        |
